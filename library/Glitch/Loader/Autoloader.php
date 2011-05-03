@@ -56,7 +56,7 @@ class Glitch_Loader_Autoloader implements Zend_Loader_Autoloader_Interface
     public function autoload($class)
     {
         // E.g. "Zend_Application" --> "Zend/Application.php"
-        $filename = str_replace('_', DIRECTORY_SEPARATOR, $class) . '.php';
+        $filename = str_replace(array('_', '\\'), DIRECTORY_SEPARATOR, $class) . '.php';
 
         // Don't use require_once: halts execution instantly when file is not found
         $isLoaded = include_once $filename;
