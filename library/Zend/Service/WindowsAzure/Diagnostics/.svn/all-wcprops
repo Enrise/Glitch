@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics
+END
+LogLevel.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/LogLevel.php
+END
+Manager.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/Manager.php
+END
+ConfigurationInstance.php
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
+END
+ConfigurationLogs.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationLogs.php
+END
+ConfigurationPerformanceCounters.php
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationPerformanceCounters.php
+END
+ConfigurationObjectBaseAbstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationObjectBaseAbstract.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/Exception.php
+END
+DirectoryConfigurationSubscription.php
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/DirectoryConfigurationSubscription.php
+END
+ConfigurationDiagnosticInfrastructureLogs.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDiagnosticInfrastructureLogs.php
+END
+ConfigurationDirectories.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDirectories.php
+END
+ConfigurationDataSources.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDataSources.php
+END
+ConfigurationWindowsEventLog.php
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationWindowsEventLog.php
+END
+PerformanceCounterSubscription.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/WindowsAzure/Diagnostics/PerformanceCounterSubscription.php
+END

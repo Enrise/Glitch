@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl
+END
+Shortener.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/Shortener.php
+END
+JdemCz.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/JdemCz.php
+END
+AbstractShortener.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/AbstractShortener.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/Exception.php
+END
+TinyUrlCom.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/TinyUrlCom.php
+END
+IsGd.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/IsGd.php
+END
+MetamarkNet.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/ShortUrl/MetamarkNet.php
+END

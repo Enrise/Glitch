@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/framework/!svn/ver/24039/standard/trunk/library/Zend
+END
+Dojo.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Dojo.php
+END
+Navigation.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Navigation.php
+END
+Crypt.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt.php
+END
+Form.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23881/standard/trunk/library/Zend/Form.php
+END
+Feed.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Feed.php
+END
+Config.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Config.php
+END
+Loader.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23848/standard/trunk/library/Zend/Loader.php
+END
+Registry.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Registry.php
+END
+Pdf.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf.php
+END
+Serializer.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Serializer.php
+END
+OpenId.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/OpenId.php
+END
+Oauth.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Oauth.php
+END
+Gdata.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata.php
+END
+Ldap.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Ldap.php
+END
+Paginator.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Paginator.php
+END
+Db.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Db.php
+END
+Debug.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Debug.php
+END
+ProgressBar.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/ProgressBar.php
+END
+Validate.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Validate.php
+END
+Currency.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Currency.php
+END
+TimeSync.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/TimeSync.php
+END
+Translate.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Translate.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Exception.php
+END
+Barcode.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Barcode.php
+END
+Locale.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Locale.php
+END
+Markup.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Markup.php
+END
+Acl.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Acl.php
+END
+Uri.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Uri.php
+END
+Auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Auth.php
+END
+Cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Cache.php
+END
+Application.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23842/standard/trunk/library/Zend/Application.php
+END
+Memory.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Memory.php
+END
+Json.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/24039/standard/trunk/library/Zend/Json.php
+END
+View.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/View.php
+END
+Layout.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Layout.php
+END
+Date.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Date.php
+END
+Log.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Log.php
+END
+Mail.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Mail.php
+END
+Session.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/framework/!svn/ver/23891/standard/trunk/library/Zend/Session.php
+END
+Queue.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Queue.php
+END
+InfoCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/InfoCard.php
+END
+Filter.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter.php
+END
+Version.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/framework/!svn/ver/24034/standard/trunk/library/Zend/Version.php
+END
+Mime.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Mime.php
+END

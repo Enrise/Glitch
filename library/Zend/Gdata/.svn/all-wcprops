@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/framework/!svn/ver/24033/standard/trunk/library/Zend/Gdata
+END
+Spreadsheets.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Spreadsheets.php
+END
+Exif.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Exif.php
+END
+MimeBodyString.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/MimeBodyString.php
+END
+YouTube.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/YouTube.php
+END
+HttpAdapterStreamingProxy.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/HttpAdapterStreamingProxy.php
+END
+Entry.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Entry.php
+END
+MediaMimeStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/MediaMimeStream.php
+END
+Feed.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Feed.php
+END
+HttpAdapterStreamingSocket.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/HttpAdapterStreamingSocket.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Query.php
+END
+Health.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Health.php
+END
+ClientLogin.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/ClientLogin.php
+END
+Calendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Calendar.php
+END
+Gapps.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Gapps.php
+END
+Geo.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Geo.php
+END
+AuthSub.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/framework/!svn/ver/24033/standard/trunk/library/Zend/Gdata/AuthSub.php
+END
+Extension.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Extension.php
+END
+Photos.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Photos.php
+END
+Books.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Books.php
+END
+HttpClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/HttpClient.php
+END
+Media.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/Media.php
+END
+App.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/App.php
+END
+Gbase.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Gbase.php
+END
+DublinCore.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/DublinCore.php
+END
+MimeFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Gdata/MimeFile.php
+END
+Docs.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23804/standard/trunk/library/Zend/Gdata/Docs.php
+END

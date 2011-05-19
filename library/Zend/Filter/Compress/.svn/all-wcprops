@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress
+END
+Lzf.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Lzf.php
+END
+CompressInterface.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/CompressInterface.php
+END
+Bz2.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Bz2.php
+END
+CompressAbstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/CompressAbstract.php
+END
+Gz.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Gz.php
+END
+Zip.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Zip.php
+END
+Rar.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Rar.php
+END
+Tar.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Filter/Compress/Tar.php
+END

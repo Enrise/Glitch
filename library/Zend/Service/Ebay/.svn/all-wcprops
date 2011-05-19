@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Ebay
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Ebay/Exception.php
+END
+Finding.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Ebay/Finding.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Ebay/Abstract.php
+END

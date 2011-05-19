@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon
+END
+ResultSet.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/ResultSet.php
+END
+Item.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Item.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Exception.php
+END
+EditorialReview.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/EditorialReview.php
+END
+SimpleDb.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/SimpleDb.php
+END
+Offer.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Offer.php
+END
+SimilarProduct.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/SimilarProduct.php
+END
+Accessories.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Accessories.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Abstract.php
+END
+Query.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Query.php
+END
+Sqs.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Sqs.php
+END
+Ec2.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Ec2.php
+END
+ListmaniaList.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/ListmaniaList.php
+END
+OfferSet.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/OfferSet.php
+END
+Authentication.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Authentication.php
+END
+Image.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/Image.php
+END
+CustomerReview.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/CustomerReview.php
+END
+S3.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/Amazon/S3.php
+END

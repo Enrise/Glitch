@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Exception.php
+END
+Response.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Response.php
+END
+Console.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Console.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Abstract.php
+END
+Storage.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Storage.php
+END
+Config.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Config.php
+END
+Manifest.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Manifest.php
+END
+Request.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Client/Request.php
+END

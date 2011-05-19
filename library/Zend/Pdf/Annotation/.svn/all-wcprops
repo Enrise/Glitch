@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf/Annotation
+END
+Link.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf/Annotation/Link.php
+END
+Markup.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf/Annotation/Markup.php
+END
+Text.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf/Annotation/Text.php
+END
+FileAttachment.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Pdf/Annotation/FileAttachment.php
+END

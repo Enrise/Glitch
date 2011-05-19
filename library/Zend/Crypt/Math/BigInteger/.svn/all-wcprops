@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt/Math/BigInteger
+END
+Bcmath.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt/Math/BigInteger/Bcmath.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt/Math/BigInteger/Exception.php
+END
+Interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt/Math/BigInteger/Interface.php
+END
+Gmp.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Crypt/Math/BigInteger/Gmp.php
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Cloud
+END
+AbstractFactory.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Cloud/AbstractFactory.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Cloud/Exception.php
+END
+OperationNotAvailableException.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Cloud/OperationNotAvailableException.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/framework/!svn/ver/23937/standard/trunk/library/Zend/Dojo
+END
+Data.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Dojo/Data.php
+END
+BuildLayer.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Dojo/BuildLayer.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Dojo/Exception.php
+END
+Form.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Dojo/Form.php
+END

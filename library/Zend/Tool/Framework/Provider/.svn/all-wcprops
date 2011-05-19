@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider
+END
+DocblockManifestable.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/DocblockManifestable.php
+END
+Interactable.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Interactable.php
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Exception.php
+END
+Repository.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Repository.php
+END
+Initializable.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Initializable.php
+END
+Interface.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Interface.php
+END
+Signature.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Signature.php
+END
+Abstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Abstract.php
+END
+Pretendable.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Tool/Framework/Provider/Pretendable.php
+END

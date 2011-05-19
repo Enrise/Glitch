@@ -1,0 +1,203 @@
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall
+END
+GetRunningConferenceResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetRunningConferenceResponseType.php
+END
+CCSResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CCSResponseType.php
+END
+GetConferenceStatusResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceStatusResponse.php
+END
+AddConferenceTemplateParticipantResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/AddConferenceTemplateParticipantResponseType.php
+END
+RemoveConferenceTemplateParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceTemplateParticipantResponse.php
+END
+RemoveConferenceTemplateResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceTemplateResponse.php
+END
+UpdateParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateParticipantResponse.php
+END
+GetParticipantStatusResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetParticipantStatusResponse.php
+END
+CreateConferenceTemplateResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceTemplateResponse.php
+END
+NewParticipantResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/NewParticipantResponseType.php
+END
+CreateConferenceResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceResponseType.php
+END
+GetConferenceTemplateListResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateListResponseType.php
+END
+GetConferenceListResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceListResponse.php
+END
+GetConferenceTemplateParticipantResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateParticipantResponseType.php
+END
+UpdateConferenceTemplateParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceTemplateParticipantResponse.php
+END
+GetConferenceTemplateResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateResponseType.php
+END
+GetRunningConferenceResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetRunningConferenceResponse.php
+END
+ConferenceCallAbstract.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/ConferenceCallAbstract.php
+END
+UpdateConferenceResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceResponse.php
+END
+AddConferenceTemplateParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/AddConferenceTemplateParticipantResponse.php
+END
+GetConferenceStatusResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceStatusResponseType.php
+END
+CommitConferenceResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CommitConferenceResponse.php
+END
+GetParticipantStatusResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetParticipantStatusResponseType.php
+END
+RemoveConferenceResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveConferenceResponse.php
+END
+NewParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/NewParticipantResponse.php
+END
+CreateConferenceTemplateResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceTemplateResponseType.php
+END
+CreateConferenceResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/CreateConferenceResponse.php
+END
+RemoveParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/RemoveParticipantResponse.php
+END
+GetConferenceTemplateListResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateListResponse.php
+END
+GetConferenceTemplateParticipantResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateParticipantResponse.php
+END
+GetConferenceTemplateResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceTemplateResponse.php
+END
+GetConferenceListResponseType.php
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/GetConferenceListResponseType.php
+END
+UpdateConferenceTemplateResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/framework/!svn/ver/23772/standard/trunk/library/Zend/Service/DeveloperGarden/Response/ConferenceCall/UpdateConferenceTemplateResponse.php
+END
