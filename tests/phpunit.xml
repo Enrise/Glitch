@@ -1,0 +1,14 @@
+<phpunit stopOnFailure="false" bootstrap="/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/tests/phpunit-boot.php">
+  <filter>
+    <whitelist>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/application</directory>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/library/Idm</directory>
+    </whitelist>
+    <blacklist>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/tests</directory>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/library/Glitch</directory>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/library/Zend</directory>
+      <directory suffix=".php">/var/lib/hudson/jobs/WegenerIDM/workspace/trunk/library/OAuth</directory>
+    </blacklist>
+  </filter>
+</phpunit>
