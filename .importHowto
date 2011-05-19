@@ -1,0 +1,22 @@
+git svn clone -r13403:HEAD --trunk=/3047-Codebase/Glitch/trunk/ --tags=/3047-Codebase/Glitch/tags/ --branches=/3047-Codebase/Glitch/branches/ http://repos.enrise.com/svn/ .
+
+#If you want to commit all of these changes, run: 
+    git commit -a
+
+ #and enter your commit message. This creates a local commit only. It hasn't been pushed to the SVN server yet. If you only want to add changes from some files but not others, run: 
+    git add file1 file2 file3 ...
+    git add -i file4 # if you only want to add some diff hunks and not others
+    git commit
+
+ #and enter your commit message. After this, 'git diff' will still show the uncommitted changes. While you're adding changes to be committed, you can run 'git diff --cached' to see what's going to go in the next commit. 
+
+# After you've made however many commits, you can push up to the svn server with: 
+    git svn dcommit
+
+# That will also bring your local tree up to date. To bring your tree up to date in general, run: 
+    git svn rebase
+
+# This will update your local checkout and then re-apply your local un-submitted commits on top of the new trunk. 
+
+# If you want to get the commits for all branches that exist in your clone: 
+    git svn fetch

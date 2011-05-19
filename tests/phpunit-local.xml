@@ -1,0 +1,14 @@
+<phpunit stopOnFailure="false" bootstrap="phpunit-boot.php">
+  <filter>
+    <whitelist>
+      <directory suffix=".php">../application</directory>
+      <directory suffix=".php">../library/Idm</directory>
+    </whitelist>
+    <blacklist>
+      <directory suffix=".php">../tests</directory>
+      <directory suffix=".php">../library/Glitch</directory>
+      <directory suffix=".php">../library/Zend</directory>
+      <directory suffix=".php">../library/OAuth</directory>
+    </blacklist>
+  </filter>
+</phpunit>
