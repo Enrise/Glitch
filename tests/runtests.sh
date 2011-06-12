@@ -1,3 +1,16 @@
-phpunit  --testdox-html ../public/coverage/testdox.html --coverage-html ../public/coverage --configuration phpunit-local.xml --verbose --colors --bootstrap phpunit-boot.php $1
-#phpunit --coverage-html ../public/coverage --configuration phpunit.xml --verbose --colors application/modules/Account
+#!/bin/sh
+#
 
+if [ -z "$1" ] ; then
+	dir=Glitch/
+else
+	dir=$1
+fi
+
+phpunit \
+	--configuration phpunit-local.xml \
+	-d memory_limit=-1 \
+	-d display_startup_errors=0 \
+	$dir
+
+#	--process-isolation \

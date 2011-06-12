@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 /**
  * Helper file for unit testing. Based on ZF's TestHelper.php
  *
@@ -15,7 +15,7 @@
  * @copyright   2010, 4worx
  * @version     $Id: TestHelper.php 6352 2010-08-16 15:02:45Z tpater $
  */
-
+/*
 // Error reporting level to which IAP code must comply
 error_reporting(E_ALL | E_STRICT);
 
@@ -34,6 +34,7 @@ set_include_path(implode(PATH_SEPARATOR, $path));
 
 // Unset global variables that are no longer needed
 unset($root, $libraryPath, $testsPath, $path);
+require_once 'TestCase.php';
 
 // ZF operates without require_once's, so use an autoloader instead
 function __autoload($class)
@@ -42,10 +43,10 @@ function __autoload($class)
 }
 
 // PHPUnit dependencies
-require_once 'PHPUnit/Framework.php';
+//require_once 'PHPUnit/Framework.php';
 require_once 'PHPUnit/Framework/IncompleteTestError.php';
 require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'PHPUnit/Framework/TestSuite.php';
 require_once 'PHPUnit/Runner/Version.php';
 require_once 'PHPUnit/TextUI/TestRunner.php';
-require_once 'PHPUnit/Util/Filter.php';
+require_once 'PHPUnit/Util/Filter.php';*/
