@@ -35,42 +35,42 @@ class Glitch_Controller_Request_RestTest
    
    public function testParseUrlElements()
    {
-       $app = new Zend_Application('testing', $this->_appConfig);
-       $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
-       $bootstrap->bootstrap();
+        $app = new Zend_Application('testing', $this->_appConfig);
+        $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
+        $bootstrap->bootstrap();
        
-       $request = new Glitch_Controller_Request_RestMock(
-       				'http://example.net/decision/location/5/defects', $bootstrap);
+        $request = new Glitch_Controller_Request_RestMock(
+       	 			'http://example.net/decision/location/5/defects', $bootstrap);
        
-       $router = $bootstrap->getResource('router');
-       $router->route($request);
+        $router = $bootstrap->getResource('router');
+        $router->route($request);
+        
+        $this->assertEquals($router->getCurrentRoute()->getRouteUrl(), 'decision');
        
-       $this->assertEquals($router->getCurrentRoute()->getRouteUrl(), 'decision');
-       
-       $expected = array(array('element' => 'location', 'resource' => 5,
+        $expected = array(array('element' => 'location', 'resource' => 5,
                                'path' => '', 'module' => null));
-       $this->assertEquals($expected, $request->getParentElements());
+        $this->assertEquals($expected, $request->getParentElements());
        
-       $expected = array_merge($expected, 
+        $expected = array_merge($expected, 
                              array(array('element' => 'defect', 'resource' => '',
                                'path' => 'location_', 'module' => null)));
-       $this->assertEquals($expected, $request->getUrlElements());
+        $this->assertEquals($expected, $request->getUrlElements());
        
-       $this->assertEquals('collection', $request->getResourceType());
+        $this->assertEquals('collection', $request->getResourceType());
        
        
-       $request = new Glitch_Controller_Request_RestMock(
+        $request = new Glitch_Controller_Request_RestMock(
        				'http://example.net/decision/location/5/defect/3', $bootstrap);
-       $router = $bootstrap->getResource('router');
-       $router->route($request);
-       $this->assertEquals('resource', $request->getResourceType());
+        $router = $bootstrap->getResource('router');
+        $router->route($request);
+        $this->assertEquals('resource', $request->getResourceType());
        
-       $xMainElement = array('element' => 'defect', 'resource' => 3,
+        $xMainElement = array('element' => 'defect', 'resource' => 3,
        						 'path' => 'location_', 'module' => null);
-       $this->assertEquals($xMainElement, $request->getMainElement());
-       $this->assertEquals(3, $request->getResource());
+        $this->assertEquals($xMainElement, $request->getMainElement());
+        $this->assertEquals(3, $request->getResource());
        
-       $this->assertNull($request->getControllerName());
+        $this->assertNull($request->getControllerName());
    }
    
    
