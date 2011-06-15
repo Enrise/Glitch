@@ -11,6 +11,7 @@ phpunit \
 	--configuration phpunit-local.xml \
 	-d memory_limit=-1 \
 	-d display_startup_errors=0 \
+	--verbose \
 	$dir
 
 #	--process-isolation \
