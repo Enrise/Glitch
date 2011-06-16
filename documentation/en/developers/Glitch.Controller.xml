@@ -1,22 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Glitch Library Documentation by Enrise B.V. (www.enrise.com) is licensed under the Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
+    444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ -->
 <chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
-    xmlns:xlink="http://www.w3.org/1999/xlink">
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="glitch.controller">
+    
 	<title>Glitch_Controller</title>
 
 	<para>
-		Introduction
+		The Glitch_Controller component has been invented to provide various speed optimalizations
+		over the Zend Framework Zend_Controller and provides extensive REST support accompanied by
+		the HMVC Design Pattern. 
     </para>
 
-	<sect1>
-		<title></title>
+	<sect1 id="glitch.controller.rest">
+		<title>REST</title>
 		<para>
+            The REST implementation was setup in a way that a route like
+            <uri>/entryPoint/libraries/floor/3/books</uri> is automatically mapped to
+            <classname>ModuleName_Controller_Library_Floor_Book</classname>. Each
+            Action in each controller is meant to return an array containing the data
+            intended for the view. This array is then automatically rendered to Xml,
+            Json or Html depending on the Accept headers sent. Alternatively, a
+            specific renderer may be implemented to output the data in a custom format.  
 		</para>
+		
+		<para>
+		  In order to use the REST dispatcher in a hybrid environment that serves both
+		  REST Requests as well as Non-REST Requests, it is necessary to <classname>Glitch_Controller_Front</classname>.
+		  This class allows one to switch dispatcher based on the route type prior to dispatching.
+		  To use <classname>Glitch_Controller_Front</classname> the static <methodname>getInstance()</methodname> method
+		  must be called before the <methodname>getInstance()</methodname> of its parent class, 
+		  <classname>Zend_Controller_Front</classname>. To do this, it is generally considered best-practice
+		  to do so in your bootstrap as soon as it can be called (right after instantiating your autoloader).
+        </para>
 
-		<sect2>
-			<title></title>
-			<para></para>
+		<sect2 id="glitch.controller.rest.restMap">
+			<title>RestMap</title>
+			<para>
+                In order for the dispatcher to know how to map the supplied route to
+                the correct controller it is required to specify the mappings of the
+                url in your application configuration. This is required because you will
+                generally want to use the same controller for both <uri>/entryPoint/library/5</uri>
+                and <uri>/entryPoint/libraries</uri>.
+            </para>
+            
+            <para>Each mapping in the map uses a key that denotes the part in the url,
+                  accompanied by the name of the controller, and a specification
+                  of the type: either a <acronym>resource</acronym> or a
+                  <acronym>collection</acronym>. If no type is specified a resource
+                  is assumed.</para>
+            <example id="glitch.controller.rest.restMap.configExample">
+                <title>Sample RestMap Configuration</title>
+                
+                <para>
+	                The example below shows the behavior outlined above. It will
+	                ensure a part of a url like <uri>location/5</uri> is mapped to a
+	                controller named <acronym>location</acronym> and a url part like
+	                <uri>elements/</uri> is mapped to a controller named 
+	                <acronym>element</acronym>.
+                </para>
+                
+                <programlisting language="ini"><![CDATA[
+resources.router.restmappings.locations.name = location
+resources.router.restmappings.locations.isCollection = true
 
-		</sect2>
-	</sect1>
+resources.router.restmappings.location.name = location
+
+resources.router.restmappings.elements.name = element
+resources.router.restmappings.elements.isCollection = true
+
+resources.router.restmappings.element.name = element
+
+resources.router.restmappings.defects.name = defect
+resources.router.restmappings.defects.isCollection = true
+
+resources.router.restmappings.defect.name = defect
+]]></programlisting>
+            </example>
+            
+            <sect3 id="glitch.controller.rest.restMap.controllerMapping">
+                <title>Mapping of URLs to Controllers</title>
+                
+                <para>
+                    Each url part following the entry point is mapped to a name
+                    which is suffixed to the controller class name. However, prior
+                    to invoking the controller, a method named <methodname>passThrough()</methodname>
+                    is called on each controller that is part of the prefix of the final
+                    controller getting called. This allows each passthrough method to
+                    manipulate the request object, or return false upon error (like invalid
+                    user input). Alternatively, each <methodname>passThrough()</methodname>
+                    may also throw an exception. Whenever false is returned, or an exception is thrown,
+                    the handling of the request is stopped, the lucky user is served a wonderful
+                    error page. The error page shown may be dependent on the exception thrown - if any. 
+                </para>
+                
+                <para>Imagine there's a url requested named <uri>/entryPoint/location/5/element/4/defects</uri>.
+                    The Controller whose Action Method will be called is 
+                    <classname>ModuleName_Controller_Location_Element_Defect</classname>. However, prior to
+                    calling this, the methods <methodname>ModuleName_Controller_Location_Element::passThrough()</methodname>
+                    and <methodname>ModuleName_Controller_Location::passThrough()</methodname> will be called.
+                    
+                </para>
+            </sect3>
+        </sect2>
+        
+        <sect2 id="glitch.controller.rest.actionMethods">
+            <title>Action Methods</title>
+            <para>
+                After the controller has been determined and all the prefixing controllers their
+                <methodname>passThrough()</methodname> methods didn't error, the method 
+                <methodname>getActionMethod()</methodname> is called to determine what Action Method
+                to invoke. This method is already implemented in
+                <classname>Glitch_Controller_Action_Rest</classname>, which is to be extended by all REST-
+                controllers. By default, this method returns <acronym>type.ucfirst(method)."Action"</acronym>. Type either being
+                "collection" or "resource", the method the Http Request Method. This results in (default) method names like
+                <methodname>resourceDeleteAction()</methodname> and <methodname>collectionPutAction()</methodname>.
+            </para>
+
+            <para>
+                In a Rest Controller the same methods can be used as in a conventional ZF1 Controller. That is,
+                the same action helpers are available, and so is a request object that can be retrieved through
+                <methodname>getRequest()</methodname>. Beware though that the <acronym>Actionstack Action Helper</acronym>
+                has not been tested with the Rest Dispatcher and presumably will not work in a Rest environment.
+            </para>
+            
+            <para>
+                What does differ in a Action Method however, is the way return values are handled.
+                Rather than manipulating a View Object, an Action Method can simply return an array of which
+                the value of the key <acronym>data</acronym> will be used when rendering.
+            </para>
+        </sect2>
+        
+        <sect2 id="glitch.controller.rest.response">
+            <title>Handling the response</title>
+            
+            <para>
+                As noted above, each Action Method returns an array containing data. Also, in the response object
+                an output format can be specified using <methodname>Glitch_Controller_Response_Rest::setOutputFormat()</methodname>.
+                This array will then be outputted in the desired format (xml by default). If the output is not as
+                one would like it to be, a custom renderer can be created.
+            </para>
+            
+            <para>The renderer should be located at
+                <uri>Modulename/View/Script/Controllername/methodName.format.phtml</uri>. In other words, if you have
+                a controller named MyModule_Controller_Foo_Bar, the request method was <acronym>delete</acronym>
+                on a resource and the output format is json, the renderer should be located at
+                <uri>MyModule/View/Script/Foo/Bar/ResourceDeleteAction.json.phtml</uri>.
+            </para>
+            
+            <para>
+                In contrast with conventional ZF1 Views there's no object context available in a renderer.
+                There is however a variable available named $data which contains the contents of the data key
+                that was part of the returned array by your Action Method. This means that there currently is
+                no concept of viewhelpers available in a renderer. It was decided to implement it like this
+                for the sake of simplicity (<ulink url="http://en.wikipedia.org/wiki/KISS_principle">KISS</ulink>) 
+                and performance. At later stage a concept of viewhelpers <emphasis>may</emphasis> be introduced.
+            </para>
+            
+            <sect3 id="glitch.controller.rest.response.exceptions">
+                <title>Exceptions</title>
+                
+                <para>
+                    A default abstract Error Controller is available in <classname>Glitch_Controller_Action_RestError</classname>.
+                    Please note that the error controller in ZF is only used when <methodname>Zend_Controller_Front::throwExceptions(false)</methodname>
+                    has been set. If not, users will be displayed plain exception messages including their stacktrace - not wanted for production
+                    environments.
+                </para>
+                <para>If <classname>Glitch_Controller_Action_RestError</classname> is used, the Exception Code is used as
+                    HTTP Response Code when the exception implements <interfacename>Glitch_ExceptionInterface</interfacename>.
+                    If no code has been specified, or does not implement the aforementioned interface,
+                    this will default to <acronym>Internal Server Error, 501</acronym>.
+                </para>
+                <para>
+                    Depending on the type of exception, a message may or may not be displayed. If the exception implements
+                    <interfacename>Glitch_Exception_MessageInterface</interfacename> a message will be displayed. Otherwise,
+                    there will be no body returned.</para>
+            </sect3>
+        </sect2>
+    </sect1>
 
 </chapter>
