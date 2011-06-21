@@ -14,7 +14,12 @@
 	<para>
 		The Glitch_Controller component has been invented to provide various speed optimalizations
 		over the Zend Framework Zend_Controller and provides extensive REST support accompanied by
-		the HMVC Design Pattern. 
+		the HMVC Design Pattern. <footnote>
+		  <para>
+		      More info on HMVC at our friends at Ibuildings:
+		      http://techportal.ibuildings.com/2010/02/22/scaling-web-applications-with-hmvc/
+		  </para>
+	    </footnote>
     </para>
 
 	<sect1 id="glitch.controller.rest">
@@ -23,7 +28,7 @@
             The REST implementation was setup in a way that a route like
             <uri>/entryPoint/libraries/floor/3/books</uri> is automatically mapped to
             <classname>ModuleName_Controller_Library_Floor_Book</classname>. Each
-            Action in each controller is meant to return an array containing the data
+            action in each controller is meant to return an array containing the data
             intended for the view. This array is then automatically rendered to Xml,
             Json or Html depending on the Accept headers sent. Alternatively, a
             specific renderer may be implemented to output the data in a custom format.  
@@ -31,7 +36,7 @@
 		
 		<para>
 		  In order to use the REST dispatcher in a hybrid environment that serves both
-		  REST Requests as well as Non-REST Requests, it is necessary to <classname>Glitch_Controller_Front</classname>.
+		  REST Requests as well as Non-REST Requests, it is necessary to employ <classname>Glitch_Controller_Front</classname>.
 		  This class allows one to switch dispatcher based on the route type prior to dispatching.
 		  To use <classname>Glitch_Controller_Front</classname> the static <methodname>getInstance()</methodname> method
 		  must be called before the <methodname>getInstance()</methodname> of its parent class, 
@@ -46,7 +51,7 @@
                 the correct controller it is required to specify the mappings of the
                 url in your application configuration. This is required because you will
                 generally want to use the same controller for both <uri>/entryPoint/library/5</uri>
-                and <uri>/entryPoint/libraries</uri>.
+                and <uri>/entryPoint/libraries</uri> (if they both refer to the same collection).
             </para>
             
             <para>Each mapping in the map uses a key that denotes the part in the url,
@@ -95,7 +100,7 @@ resources.router.restmappings.defect.name = defect
                     manipulate the request object, or return false upon error (like invalid
                     user input). Alternatively, each <methodname>passThrough()</methodname>
                     may also throw an exception. Whenever false is returned, or an exception is thrown,
-                    the handling of the request is stopped, the lucky user is served a wonderful
+                    the handling of the request is stopped and the lucky user is served a wonderful
                     error page. The error page shown may be dependent on the exception thrown - if any. 
                 </para>
                 
