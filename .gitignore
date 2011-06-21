@@ -2,4 +2,4 @@ tests/coverage/
 .buildpath
 .project
 .settings/
-
+tests/coverage
