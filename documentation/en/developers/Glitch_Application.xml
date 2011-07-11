@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Glitch Library Documentation by Enrise B.V. (www.enrise.com) is licensed under the Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
+    444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ -->
+<chapter xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+	<title>Glitch_Appliction</title>
+	<sect1>
+		<title>Glitch_Application</title>
+		<para>
+            Glitch_Application's main goals are to simplify ZF's ways of doing things,
+            make it more whenever we can and where it makes sense, and lastly it's
+            intended to provide various speed improvements over the way ZF does things.
+        </para>
+
+	</sect1>
+    
+    <xi:include href="Glitch_Application-AvailableResources.xml" />
+
+</chapter>

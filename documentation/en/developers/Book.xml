@@ -16,7 +16,7 @@
         444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
     </para>
 
-	<xi:include href="Glitch.Application.xml" />
-	<xi:include href="Glitch.Controller.xml" />
+	<xi:include href="Glitch_Application.xml" />
+	<xi:include href="Glitch_Controller.xml" />
 	
 </book>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Glitch Library Documentation by Enrise B.V. (www.enrise.com) is licensed under the Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
+    444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ -->
+<sect2 id="glitch.application.available-resources" 
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <title>Available Resource Plugins</title>
+
+    <para>
+        Here you'll find <acronym>API</acronym>-like documentation about all resource plugins
+        available by default in <classname>Glitch_Application</classname>.
+    </para>
+
+    <xi:include href="Glitch_Application-AvailableResources-Db.xml" />
+</sect2>

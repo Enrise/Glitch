@@ -1,24 +1,48 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The Glitch library Manual</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="set" title="The Glitch library Manual" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="id587001"></a>The Glitch library Manual</h1></div><div><h3 class="corpauthor">Enrise</h3></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="book"><a href="#id587022">Glitch Developers Handbook</a></span></dt><dd><dl><dt><span class="chapter"><a href="#id587151">1. Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id587183">Here a rant about Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#id587209"></a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#glitch.controller">2. Glitch_Controller</a></span></dt><dd><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></dd></dl></dd></dl></div><div class="book" title="Glitch Developers Handbook"><div class="titlepage"><div><div><h1 class="title"><a name="id587022"></a>Glitch Developers Handbook</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#id587151">1. Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id587183">Here a rant about Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#id587209"></a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#glitch.controller">2. Glitch_Controller</a></span></dt><dd><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>2.1. <a href="#glitch.controller.rest.restMap.configExample">Sample RestMap Configuration</a></dt></dl></div><p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The Glitch library Manual</title><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="set" title="The Glitch library Manual" lang="en"><div class="titlepage"><div><div><h1 class="title"><a name="id497745"></a>The Glitch library Manual</h1></div><div><h3 class="corpauthor">Enrise</h3></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="book"><a href="#id497875">Glitch Developers Handbook</a></span></dt><dd><dl><dt><span class="chapter"><a href="#id497761">1. Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id497766">Glitch_Application</a></span></dt></dl></dd><dt><span class="chapter"><a href="#glitch.controller">2. Glitch_Controller</a></span></dt><dd><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></dd></dl></dd></dl></div><div class="book" title="Glitch Developers Handbook"><div class="titlepage"><div><div><h1 class="title"><a name="id497875"></a>Glitch Developers Handbook</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="chapter"><a href="#id497761">1. Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id497766">Glitch_Application</a></span></dt></dl></dd><dt><span class="chapter"><a href="#glitch.controller">2. Glitch_Controller</a></span></dt><dd><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>1.1. <a href="#glitch.application.available-resources.db.configExample">Sample Db Configuration</a></dt><dt>2.1. <a href="#glitch.controller.rest.restMap.configExample">Sample RestMap Configuration</a></dt></dl></div><p>
         Glitch Library Documentation by Enrise B.V. is licensed under the Creative Commons
         Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
         http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
         444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
-    </p><div class="chapter" title="Chapter 1. Glitch_Appliction"><div class="titlepage"><div><div><h2 class="title"><a name="id587151"></a>Chapter 1. Glitch_Appliction</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#id587183">Here a rant about Glitch_Appliction</a></span></dt><dd><dl><dt><span class="sect2"><a href="#id587209"></a></span></dt></dl></dd></dl></div><div class="sect1" title="Here a rant about Glitch_Appliction"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id587183"></a>Here a rant about Glitch_Appliction</h2></div></div></div><p>Paragraph</p><div class="sect2"><div class="titlepage"></div>foobar
-		</div></div></div><div class="chapter" title="Chapter 2. Glitch_Controller"><div class="titlepage"><div><div><h2 class="title"><a name="glitch.controller"></a>Chapter 2. Glitch_Controller</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></div><p>
+    </p><div class="chapter" title="Chapter 1. Glitch_Appliction"><div class="titlepage"><div><div><h2 class="title"><a name="id497761"></a>Chapter 1. Glitch_Appliction</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#id497766">Glitch_Application</a></span></dt></dl></div><div class="sect1" title="Glitch_Application"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id497766"></a>Glitch_Application</h2></div></div></div><p>
+            Glitch_Application's main goals are to simplify ZF's ways of doing things,
+            make it more whenever we can and where it makes sense, and lastly it's
+            intended to provide various speed improvements over the way ZF does things.
+        </p></div><div class="sect2" title="Available Resource Plugins"><div class="titlepage"><div><div><h3 class="title"><a name="glitch.application.available-resources"></a>Available Resource Plugins</h3></div></div></div><p>
+        Here you'll find <acronym class="acronym">API</acronym>-like documentation about all resource plugins
+        available by default in <code class="classname">Glitch_Application</code>.
+    </p><div class="sect3" title="Glitch_Application_Resource_Db"><div class="titlepage"><div><div><h4 class="title"><a name="glitch.application.available-resources.db"></a>Glitch_Application_Resource_Db</h4></div></div></div><p>
+        <acronym class="acronym">Glitch_Application_Resource_Db</acronym> was created to allow
+        for easy caching and profiling of your database metadata and queries respectively.
+    </p><div class="example"><a name="glitch.application.available-resources.db.configExample"></a><p class="title"><b>Example 1.1. Sample Db Configuration</b></p><div class="example-contents"><p>
+            The example below demonstrates how the database resource plugin may
+            be configured. As you can see, it is no different from the way it would
+            work with Vanilla ZF.
+        </p><pre class="programlisting">
+resources.db.params.dbname = "%%DBNAME%%"
+resources.db.params.username = "%%DBUSERNAME"
+resources.db.params.password = "%%DBPASSWORD"
+resources.db.params.host = "%%DBHOST%%"
+
+resources.db.adapter = "pdo_mysql"
+resources.db.isDefaultTableAdapter = true
+        </pre></div></div><br class="example-break"><p>
+        WARNING: Note that by not setting the adapter the db resource plugin will
+        effectively be disabled. This is default ZF behavior.
+    </p></div></div></div><div class="chapter" title="Chapter 2. Glitch_Controller"><div class="titlepage"><div><div><h2 class="title"><a name="glitch.controller"></a>Chapter 2. Glitch_Controller</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="sect1"><a href="#glitch.controller.rest">REST</a></span></dt><dd><dl><dt><span class="sect2"><a href="#glitch.controller.rest.restMap">RestMap</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.actionMethods">Action Methods</a></span></dt><dt><span class="sect2"><a href="#glitch.controller.rest.response">Handling the response</a></span></dt></dl></dd></dl></div><p>
 		The Glitch_Controller component has been invented to provide various speed optimalizations
 		over the Zend Framework Zend_Controller and provides extensive REST support accompanied by
-		the HMVC Design Pattern. <sup>[<a name="id587229" href="#ftn.id587229" class="footnote">1</a>]</sup>
+		the HMVC Design Pattern. <sup>[<a name="id498006" href="#ftn.id498006" class="footnote">1</a>]</sup>
     </p><div class="sect1" title="REST"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="glitch.controller.rest"></a>REST</h2></div></div></div><p>
             The REST implementation was setup in a way that a route like
             <code class="uri">/entryPoint/libraries/floor/3/books</code> is automatically mapped to
             <code class="classname">ModuleName_Controller_Library_Floor_Book</code>. Each
-            Action in each controller is meant to return an array containing the data
+            action in each controller is meant to return an array containing the data
             intended for the view. This array is then automatically rendered to Xml,
             Json or Html depending on the Accept headers sent. Alternatively, a
             specific renderer may be implemented to output the data in a custom format.  
 		</p><p>
 		  In order to use the REST dispatcher in a hybrid environment that serves both
-		  REST Requests as well as Non-REST Requests, it is necessary to <code class="classname">Glitch_Controller_Front</code>.
+		  REST Requests as well as Non-REST Requests, it is necessary to employ <code class="classname">Glitch_Controller_Front</code>.
 		  This class allows one to switch dispatcher based on the route type prior to dispatching.
 		  To use <code class="classname">Glitch_Controller_Front</code> the static <code class="methodname">getInstance()</code> method
 		  must be called before the <code class="methodname">getInstance()</code> of its parent class, 
@@ -29,7 +53,7 @@
                 the correct controller it is required to specify the mappings of the
                 url in your application configuration. This is required because you will
                 generally want to use the same controller for both <code class="uri">/entryPoint/library/5</code>
-                and <code class="uri">/entryPoint/libraries</code>.
+                and <code class="uri">/entryPoint/libraries</code> (if they both refer to the same collection).
             </p><p>Each mapping in the map uses a key that denotes the part in the url,
                   accompanied by the name of the controller, and a specification
                   of the type: either a <acronym class="acronym">resource</acronym> or a
@@ -64,7 +88,7 @@ resources.router.restmappings.defect.name = defect
                     manipulate the request object, or return false upon error (like invalid
                     user input). Alternatively, each <code class="methodname">passThrough()</code>
                     may also throw an exception. Whenever false is returned, or an exception is thrown,
-                    the handling of the request is stopped, the lucky user is served a wonderful
+                    the handling of the request is stopped and the lucky user is served a wonderful
                     error page. The error page shown may be dependent on the exception thrown - if any. 
                 </p><p>Imagine there's a url requested named <code class="uri">/entryPoint/location/5/element/4/defects</code>.
                     The Controller whose Action Method will be called is 
@@ -119,7 +143,7 @@ resources.router.restmappings.defect.name = defect
                 </p><p>
                     Depending on the type of exception, a message may or may not be displayed. If the exception implements
                     <code class="interfacename">Glitch_Exception_MessageInterface</code> a message will be displayed. Otherwise,
-                    there will be no body returned.</p></div></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a id="ftn.id587229" href="#id587229" class="para">1</a>] </sup>
+                    there will be no body returned.</p></div></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a id="ftn.id498006" href="#id498006" class="para">1</a>] </sup>
 		      More info on HMVC at our friends at Ibuildings:
 		      http://techportal.ibuildings.com/2010/02/22/scaling-web-applications-with-hmvc/
 		  </p></div></div></div></div></div></body></html>

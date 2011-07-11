@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Glitch Library Documentation by Enrise B.V. (www.enrise.com) is licensed under the Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
+    444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ -->
+ <sect3 id="glitch.application.available-resources.db">
+    <title>Glitch_Application_Resource_Db</title>
+    
+    <para>
+        <acronym>Glitch_Application_Resource_Db</acronym> was created to allow
+        for easy caching and profiling of your database metadata and queries respectively.
+    </para>
+   
+    <example id="glitch.application.available-resources.db.configExample">
+        <title>Sample Db Configuration</title>
+
+        <para>
+            The example below demonstrates how the database resource plugin may
+            be configured. As you can see, it is no different from the way it would
+            work with Vanilla ZF.
+        </para>  
+
+
+        <programlisting language="ini"><![CDATA[
+resources.db.params.dbname = "%%DBNAME%%"
+resources.db.params.username = "%%DBUSERNAME"
+resources.db.params.password = "%%DBPASSWORD"
+resources.db.params.host = "%%DBHOST%%"
+
+resources.db.adapter = "pdo_mysql"
+resources.db.isDefaultTableAdapter = true
+        ]]></programlisting>
+    </example>
+    
+    <para>
+        WARNING: Note that by not setting the adapter the db resource plugin will
+        effectively be disabled. This is default ZF behavior.
+    </para>
+ </sect3>
+ 
