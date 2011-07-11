@@ -8,9 +8,12 @@ else
 fi
 
 phpunit \
-	--configuration phpunit-local.xml \
-	-d memory_limit=-1 \
-	-d display_startup_errors=0 \
-	$dir
+    --testdox-html ../tests/coverage/testdox.html \
+    --coverage-html ../tests/coverage \
+    --configuration phpunit-local.xml \
+    -d memory_limit=-1 \
+    -d display_startup_errors=0 \
+    --colors \
+    $dir
 
 #	--process-isolation \
