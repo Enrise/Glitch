@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Glitch Library Documentation by Enrise B.V. (www.enrise.com) is licensed under the Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit 
+    http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons,
+    444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
+ -->
+ <sect3 id="glitch.application.available-resources.db">
+    <title>Glitch_Application_Resource_Log</title>
+    
+    <para>
+        <acronym>Glitch_Application_Resource_Log</acronym> was set up to allow one to
+        easily define multiple writers per log instance, and apply a formatter and
+        filter to each writer.
+    </para>
+   
+    <example id="glitch.application.available-resources.db.configExample">
+        <title>Sample Logging Configuration</title>
+
+        <para>
+            The example below demonstrates how you can setup a log instance identified by
+            <acronym>main</acronym>, that logs everything to both a file and syslog in
+            production.
+        </para>  
+
+
+        <programlisting language="ini"><![CDATA[
+[production]
+resources.log.writers.main.0.writerName = Stream
+resources.log.writers.main.0.writerParams.stream = "%%LOGPATH%%"
+
+resources.log.writers.main.1.writerName = Syslog
+resources.log.writers.main.1.writerParams.application = APP_NAME
+
+; Development does not inherit other sections
+[development : production]
+resources.log.writers.main.0.writerName = Stream
+resources.log.writers.main.0.writerParams.stream = GLITCH_DATA_PATH  "/../var/log/" APP_NAME ".log"
+        ]]></programlisting>
+    </example>
+    
+    <para>
+        Note: This example does not yet show anything formatter or filter
+        related.
+    </para>
+ </sect3>
+ 

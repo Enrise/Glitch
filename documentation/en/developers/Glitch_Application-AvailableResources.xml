@@ -17,4 +17,29 @@
     </para>
 
     <xi:include href="Glitch_Application-AvailableResources-Db.xml" />
+    <xi:include href="Glitch_Application-AvailableResources-Log.xml" />    
+    
+     <sect3 id="glitch.application.available-resources.db">
+        <title>Other Resource Plugins</title>
+        <para>
+            Some undocumented/yet to be documented Resource Plugins are:
+        
+            <itemizedlist mark='opencircle'>
+                <listitem>Glitch_Application_Resource_Encoding</listitem>
+                <listitem>Glitch_Application_Resource_Errorhandler</listitem>
+                <listitem>Glitch_Application_Resource_Esi</listitem>                        
+                <listitem>Glitch_Application_Resource_Layout</listitem>
+                <listitem>Glitch_Application_Resource_Locale</listitem>
+                                 
+                <listitem>Glitch_Application_Resource_Pluginloader</listitem>
+                <listitem>Glitch_Application_Resource_Profiler</listitem>
+                <listitem>Glitch_Application_Resource_Request</listitem>                        
+                <listitem>Glitch_Application_Resource_Response</listitem>
+                <listitem>Glitch_Application_Resource_Router</listitem>
+                <listitem>Glitch_Application_Resource_Translate</listitem>                                    
+                <listitem>Glitch_Application_Resource_View</listitem>
+                <listitem>Glitch_Application_Resource_Viewrenderer</listitem>
+            </itemizedlist>
+        </para>
+    </sect3>
 </sect2>
