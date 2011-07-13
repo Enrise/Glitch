@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="observer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstname" type="xs:string" />
+                <xs:element name="lastname" type="xs:string" />
+                <xs:element name="email" type="xs:string" minOccurs="0" />
+                <xs:element name="phone" type="xs:string" minOccurs="0" />
+                <xs:element name="gender">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="male|female"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="email_updates" type="xs:boolean" />
+                <xs:element name="text_updates" type="xs:boolean" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

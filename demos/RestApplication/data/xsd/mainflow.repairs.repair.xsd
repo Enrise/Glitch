@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="repair">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string" />
+                <xs:element name="object" type="link" />
+                <xs:element name="appointment" type="link" minOccurs="0" />
+                <xs:element name="code" type="xs:string" />>
+                <xs:element name="owner" type="link" />
+
+                <xs:element name="observers" type="link" />
+                <xs:element name="tasks" type="link" />
+                <xs:element name="photos" type="link" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="link">
+        <xs:sequence>
+             <xs:element name="link">
+                 <xs:complexType>
+                     <xs:attribute name="rel" type="xs:string" use="required" />
+                     <xs:attribute name="href" type="xs:string" use="required" />
+                     <xs:attribute name="method">
+                         <xs:simpleType>
+                             <xs:restriction base="xs:string">
+                                 <xs:pattern value="get|put|post|delete"/>
+                             </xs:restriction>
+                         </xs:simpleType>
+                     </xs:attribute>
+                 </xs:complexType>
+             </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

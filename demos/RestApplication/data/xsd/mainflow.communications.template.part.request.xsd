@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="parts">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="part" minOccurs='0' maxOccurs='unbounded'>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="medium">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="type" type="xs:string" />
+                                        <xs:element name="part" type="xs:string" />
+                                   </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="contents" type="xs:string" />
+                       </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+           </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,27 @@
+<form method="<?php echo $this->escape($this->element->getMethod()); ?>"
+      action=""
+      name="<?php echo $this->escape($this->element->getName()); ?>"
+      id="<?php echo $this->escape($this->element->getId()); ?>">
+    <fieldset>
+        <legend>Adres</legend>
+
+        <?php // echo $this->form_error_summary; ?>
+
+        <div class="inline-field error required">
+            <label for="postalcode">Postcode</label>
+            <?php echo $this->element->postalcode; ?>
+        </div>
+        <div class="inline-field error">
+            <label for="number">Huisnummer</label>
+            <?php echo $this->element->housenr; ?>
+        </div>
+        <div class="inline-field error">
+            <label for="addition">Toevoeging</label>
+            <?php echo $this->element->suffix; ?>
+        </div>
+        <div class="wizard-navigation">
+            <?php echo $this->element->submit_back; ?>
+            <?php echo $this->element->submit_next; ?>
+        </div>
+    </fieldset>
+</form>

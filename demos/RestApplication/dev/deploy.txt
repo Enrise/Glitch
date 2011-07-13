@@ -1,0 +1,14 @@
+ENVIRONMENT VARIABLES
+
+[logging]
+LOGDIR 
+	Directory to log to
+
+
+[Database]
+DBNAME
+DBUSERNAME
+DBPASSWORD
+DBHOST
+	Db name, username, password and host respectively
+
