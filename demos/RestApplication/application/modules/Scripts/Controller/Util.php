@@ -1,20 +1,5 @@
 <?php
 /**
- * <project name>
- *
- * This source file is proprietary and protected by international
- * copyright and trade secret laws. No part of this source file may
- * be reproduced, copied, adapted, modified, distributed, transferred,
- * translated, disclosed, displayed or otherwise used by anyone in any
- * form or by any means without the express written authorization of
- * 4worx software innovators BV (www.4worx.com)
- *
- * @author      4worx <info@4worx.com>
- * @copyright   2010, 4worx
- * @version     $Id: Cron.php 8367 2010-10-30 06:57:03Z tpater $
- */
-
-/**
  * Controller for running utility scripts
  *
  */
@@ -46,5 +31,15 @@ class Scripts_Controller_Util extends Zend_Controller_Action
     public function indexAction()
     {
         throw new Glitch_Exception('Bad action');
+    }
+
+    /**
+     * Test this by calling cli.php -r scripts.util.example -e <environment>
+     *
+     * @return void
+     */
+    public function exampleAction()
+    {
+        echo 'It works!';
     }
 }
