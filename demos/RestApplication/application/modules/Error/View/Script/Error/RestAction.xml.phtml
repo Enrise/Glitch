@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?php
+if($data['message'] == '') {
+    $data['message'] = 'An Internal Server Error occured.
+    					The server encountered an unexpected condition
+    					which prevented it from fulfilling the request.';
+}
+?>
+<error code="<?php echo $data['code']?>">
+	<message><?php $data['message']; ?></message>
+    <environment><?php echo GLITCH_APP_ENV; ?></environment>
+<?php if (GLITCH_APP_ENV == "development") : ?>
+    <backtrace><![CDATA[
+<?php $a = debug_backtrace(false);
+    foreach ($a as $entry) {
+        if (! isset($entry['line'])) $entry['line'] = "";
+        if (! isset($entry['class'])) $entry['class'] = "";
+        print $entry['class']."::".$entry['function']."  called from ".$entry['file'].'('.$entry['line'].')'."\n";
+    }
+    ?>
+    ]]></backtrace>
+<?php endif; ?>
+</error>
