@@ -45,13 +45,6 @@ class Error_Controller_Error extends Glitch_Controller_Action_RestError
             return; // No error occurred
         }
 
-        if ($error->exception instanceof Idm_Rest_Controller_Exception) {
-            $this->_helper->viewRenderer->setNoRender();
-            $this->getResponse()->setHttpResponseCode($error->exception->getCode());
-            $this->getResponse()->sendHeaders();
-            return;
-        }
-
         // Figure out the type of error we're dealing with
         $code = self::SERVICE_UNAVAILABLE;
 
