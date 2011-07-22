@@ -7,7 +7,7 @@ if($data['message'] == '') {
 }
 ?>
 <error code="<?php echo $data['code']?>">
-	<message><?php $data['message']; ?></message>
+	<message><?php echo $data['message']; ?></message>
     <environment><?php echo GLITCH_APP_ENV; ?></environment>
 <?php if (GLITCH_APP_ENV == "development") : ?>
     <backtrace><![CDATA[
