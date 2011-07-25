@@ -3,4 +3,4 @@
 	url = git@github.com:Enrise/Zend.git
 [submodule "library/Glitch"]
 	path = library/Glitch
-	url = git@github.com:Enrise/Glitch3_Lib.git
+	url = git@github.com:Enrise/Glitch_Lib.git
