@@ -85,7 +85,6 @@ class Glitch_Controller_FrontTest
     public function testDispatch1()
     {
         set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . '/_files/');
-
         $app = new Zend_Application('testing', $this->_appConfig);
         $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
         $bootstrap->bootstrap();
@@ -113,9 +112,6 @@ class Glitch_Controller_FrontTest
 
 EOD
 		);
-
-        $errorHandler = $this->_controller->getPlugin('Zend_Controller_Plugin_ErrorHandler');
-        $this->assertEquals($errorHandler->getErrorHandlerModule(), 'error');
    }
 
     public function testDispatch2()
