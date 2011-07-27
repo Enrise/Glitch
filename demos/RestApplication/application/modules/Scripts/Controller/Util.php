@@ -34,7 +34,7 @@ class Scripts_Controller_Util extends Zend_Controller_Action
     }
 
     /**
-     * Test this by calling cli.php -r scripts.util.example -e <environment>
+     * Test this by calling cli/index.php -r scripts.util.example -e <environment>
      *
      * @return void
      */
