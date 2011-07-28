@@ -21,7 +21,9 @@ if(!defined('GLITCH_APP_ENV')) {
  *
  * @var string
  */
-define('APP_ROOT', realpath(dirname(__FILE__) . '/../'));
+if (! defined('APP_ROOT')) {
+    define('APP_ROOT', realpath(dirname(__FILE__) . '/../'));
+}
 define('GLITCH_PUBLIC_PATH', APP_ROOT . '/public');
 
 define('GLITCH_LIB_PATH', APP_ROOT . '/library');
@@ -30,3 +32,4 @@ define('GLITCH_DATA_PATH', APP_ROOT . '/data');
 define('GLITCH_MODULES_PATH', GLITCH_APP_PATH . '/modules');
 define('GLITCH_CONFIGS_PATH', GLITCH_APP_PATH . '/configs');
 define('GLITCH_PIDS_PATH', APP_ROOT . '/var/pids');
+/**#@-*/

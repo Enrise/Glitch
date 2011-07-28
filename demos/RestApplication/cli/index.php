@@ -30,8 +30,11 @@ set_exception_handler(
     }
 );
 
-require_once '../library/Zend/Console/Getopt.php';
-require_once '../library/Glitch/Console/Getopt.php';
+// Assuming we're in app root/cli folder
+define('APP_ROOT', dirname(__FILE__) . '/..');
+
+require_once APP_ROOT . '/library/Zend/Console/Getopt.php';
+require_once APP_ROOT . '/library/Glitch/Console/Getopt.php';
 
 $console = new Glitch_Console_Getopt(array(
 	'help|h' => 'Displays usage information',
@@ -65,7 +68,7 @@ if (!in_array($environment, array('development', 'testing', 'acceptance', 'produ
 }
 
 define('GLITCH_APP_ENV', $environment);
-require_once '../application/Init.php';
+require_once APP_ROOT . '/application/Init.php';
 
 set_include_path(GLITCH_LIB_PATH . PATH_SEPARATOR . GLITCH_MODULES_PATH);
 require_once GLITCH_LIB_PATH . '/Glitch/Loader/Autoloader.php';
