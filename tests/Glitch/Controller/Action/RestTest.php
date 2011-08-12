@@ -9,7 +9,7 @@ class Glitch_Controller_Action_RestTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array('router' => array(
+        'resources' => array('router' => array(
             'routes' => array('decisionRest' =>
                 array('route' => 'decision/',
                       'type' => 'Glitch_Controller_Router_Route_Rest',
@@ -34,7 +34,7 @@ class Glitch_Controller_Action_RestTest
 
         $response = new Glitch_Controller_Response_Rest();
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap,
                     array('REQUEST_METHOD' => 'POST'));
 
@@ -53,7 +53,7 @@ class Glitch_Controller_Action_RestTest
 
         $response = new Glitch_Controller_Response_Rest();
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defect/4',
+                        'http://example.net/decision/location/5/defect/4',
                     $bootstrap,
                     array('REQUEST_METHOD' => 'PUT'));
         $this->assertEquals('resourcePutAction', $controller->getActionMethod($request));
@@ -68,7 +68,7 @@ class Glitch_Controller_Action_RestTest
 
         $response = new Glitch_Controller_Response_Rest();
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap,
                     array('REQUEST_METHOD' => 'POST'));
 
@@ -101,7 +101,7 @@ class Glitch_Controller_Action_RestTest
             foreach($methods as $method) {
                 $methodName = $type . $method . 'Action';
                 $exceptions[] = array('code' => 501,
-                					'msg' => 'Requested action '. $methodName .' not implemented',
+                                    'msg' => 'Requested action '. $methodName .' not implemented',
                                     'method' => $methodName,
                                     'class' => 'Glitch_Exception_Message');
             }
@@ -127,7 +127,7 @@ class Glitch_Controller_Action_RestTest
 
         $response = new Glitch_Controller_Response_Rest();
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap,
                     array('REQUEST_METHOD' => 'POST'));
 

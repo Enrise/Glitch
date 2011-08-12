@@ -2,12 +2,12 @@
 <?php
 if($data['message'] == '') {
     $data['message'] = 'An Internal Server Error occured.
-    					The server encountered an unexpected condition
-    					which prevented it from fulfilling the request.';
+                        The server encountered an unexpected condition
+                        which prevented it from fulfilling the request.';
 }
 ?>
 <error code="<?php echo $data['code']?>">
-	<message><?php echo $data['message']; ?></message>
+    <message><?php echo $data['message']; ?></message>
     <environment><?php echo GLITCH_APP_ENV; ?></environment>
 <?php if (GLITCH_APP_ENV == "development") : ?>
     <backtrace><![CDATA[

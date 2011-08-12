@@ -37,7 +37,7 @@ require_once APP_ROOT . '/library/Zend/Console/Getopt.php';
 require_once APP_ROOT . '/library/Glitch/Console/Getopt.php';
 
 $console = new Glitch_Console_Getopt(array(
-	'help|h' => 'Displays usage information',
+    'help|h' => 'Displays usage information',
     'request|r=s' => 'Sets the request to process in format module.controller.action',
     'params|p=s' => 'Adds parameters to the request in format key=value[&key=value]',
     'environment|e=s' => 'Sets the application environment (development, testing, acceptance or production)'

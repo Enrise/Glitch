@@ -8,7 +8,7 @@ class Glitch_Controller_Request_RestTestCaseTest
         private $_appConfig = array(
         'pluginPaths' => 
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array('router' => array(
+        'resources' => array('router' => array(
             'routes' => array('decisionRest' =>
                 array('route' => 'decision/',
                       'type' => 'Glitch_Controller_Router_Route_Rest',
@@ -23,7 +23,7 @@ class Glitch_Controller_Request_RestTestCaseTest
         $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
        
         $request = new Glitch_Controller_Request_RestTestCaseMock(
-       				'http://example.net/decision/location/5/defects', $bootstrap);
+                       'http://example.net/decision/location/5/defects', $bootstrap);
         
         $request->setHeader('foo', 'bar');
         $request->setHeader('bar', 'baz');
@@ -43,7 +43,7 @@ class Glitch_Controller_Request_RestTestCaseTest
         $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
        
         $request = new Glitch_Controller_Request_RestTestCaseMock(
-       				'http://example.net/decision/location/5/defects', $bootstrap);
+                       'http://example.net/decision/location/5/defects', $bootstrap);
         
         $this->assertEquals('GET', $request->getMethod()); // should default to GET
         

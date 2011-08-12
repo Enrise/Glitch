@@ -19,11 +19,11 @@ class Glitch_Controller_FrontTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array(
+        'resources' => array(
             'modules' => true,
-    		'frontController' => array(
+            'frontController' => array(
                 'errorHandler' => array('module' => 'error'),
-    			'controllerDirectory' =>
+                'controllerDirectory' =>
                     array('decisionmodule' => 'seeconstructor')),
             'router' => array(
                 'routes' => array('decisionRest' =>
@@ -91,7 +91,7 @@ class Glitch_Controller_FrontTest
 
         $response = new Glitch_Controller_Response_Rest();
         $request = new Glitch_Controller_Request_RestMock(
-       				'http://example.net/decision/location/5/element/1/defects',
+                       'http://example.net/decision/location/5/element/1/defects',
                     $bootstrap,
                     array('REQUEST_METHOD' => 'PUT'));
 
@@ -111,7 +111,7 @@ class Glitch_Controller_FrontTest
 </zend-config>
 
 EOD
-		);
+        );
    }
 
     public function testDispatch2()
@@ -151,7 +151,7 @@ EOD
 
         $getopt = new Glitch_Console_Getopt(
             array('request|r=s' => 'format module.controller.action',
-			      'params|p=s' => 'format key=value[&key=value]'),
+                  'params|p=s' => 'format key=value[&key=value]'),
             array('--request=foo.bar.baz')
         );
         $getopt->parse();

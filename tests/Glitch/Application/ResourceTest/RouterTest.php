@@ -7,7 +7,7 @@ class Glitch_Application_Resource_RouterTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array('router' => array(
+        'resources' => array('router' => array(
             'routes' => array('decisionRest' =>
                 array('route' => 'decision/',
                       'type' => 'Glitch_Controller_Router_Route_Rest',
@@ -45,7 +45,7 @@ class Glitch_Application_Resource_RouterTest
             $this->fail('Exception expected');
         } catch (\RuntimeException $e) {
             $this->assertEquals(
-            	'The rest mappings were tried to retrieve but have not been set',
+                'The rest mappings were tried to retrieve but have not been set',
                 $e->getMessage()
             );
         }

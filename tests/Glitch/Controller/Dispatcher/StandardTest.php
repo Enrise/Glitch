@@ -10,7 +10,7 @@ class Glitch_Controller_Dispatcher_StandardTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array('router' => array(
+        'resources' => array('router' => array(
             'routes' => array('decisionRest' =>
                 array('route' => 'decision/',
                       'type' => 'Glitch_Controller_Router_Route_Rest',
@@ -50,7 +50,7 @@ class Glitch_Controller_Dispatcher_StandardTest
         $this->assertEquals(
             $dispatcher->formatControllerName('foobar'),
             'TestmodUle_Controller_Foobar'
-		);
+        );
     }
 
     public function testLoadClass()
@@ -74,7 +74,7 @@ class Glitch_Controller_Dispatcher_StandardTest
         $bootstrap->bootstrap();
 
         $request = new Glitch_Controller_Request_RestMock(
-       				'http://example.net/decision', $bootstrap);
+                       'http://example.net/decision', $bootstrap);
 
         $class = 'Glitch_Controller_Dispatcher_StandardTest_'
                 .'isDispatchableProxiesToGetControllerClass';

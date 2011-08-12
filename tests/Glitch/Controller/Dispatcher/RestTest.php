@@ -9,9 +9,9 @@ class Glitch_Controller_Dispatcher_RestTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array(
+        'resources' => array(
             'modules' => true,
-    		'frontController' => array('controllerDirectory' =>
+            'frontController' => array('controllerDirectory' =>
                 array('decisionmodule' => 'seeconstructor')),
             'router' => array(
                 'routes' => array('decisionRest' =>
@@ -52,7 +52,7 @@ class Glitch_Controller_Dispatcher_RestTest
         } catch(Glitch_Controller_Exception $e) {
             $this->assertEquals(
                 $e->getMessage(),
-            	'Request must be of type Glitch_Controller_Request_Rest but was Zend_Controller_Request_Http'
+                'Request must be of type Glitch_Controller_Request_Rest but was Zend_Controller_Request_Http'
             );
         }
     }
@@ -69,7 +69,7 @@ class Glitch_Controller_Dispatcher_RestTest
 
             $response = new Glitch_Controller_Response_Rest();
             $request = new Glitch_Controller_Request_RestMock(
-           				'http://example.net/decision/location/5/element/1/defects',
+                           'http://example.net/decision/location/5/element/1/defects',
                         $bootstrap,
                         array('REQUEST_METHOD' => 'PUT'));
 
@@ -118,7 +118,7 @@ class Glitch_Controller_Dispatcher_RestTest
 
             $response = new Glitch_Controller_Response_Rest();
             $request = new Glitch_Controller_Request_RestMock(
-           				'http://example.net/decision/location/5/element/1/defect/2/failpassthru',
+                           'http://example.net/decision/location/5/element/1/defect/2/failpassthru',
                         $bootstrap,
                         array('REQUEST_METHOD' => 'PUT'));
 
@@ -152,7 +152,7 @@ class Glitch_Controller_Dispatcher_RestTest
 
             $response = new Glitch_Controller_Response_Rest();
             $request = new Glitch_Controller_Request_RestMock(
-           				'http://example.net/decision/location/',
+                           'http://example.net/decision/location/',
                         $bootstrap,
                         array('REQUEST_METHOD' => 'DELETE'));
             $request->setParam('format', 'json');
@@ -188,7 +188,7 @@ class Glitch_Controller_Dispatcher_RestTest
 
             $response = new Glitch_Controller_Response_Rest();
             $request = new Glitch_Controller_Request_RestMock(
-           				'http://example.net/decision/locations/',
+                           'http://example.net/decision/locations/',
                         $bootstrap,
                         array('REQUEST_METHOD' => 'DELETE'));
 

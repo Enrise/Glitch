@@ -9,7 +9,7 @@ class Glitch_Controller_Router_CliTest
     private $_appConfig = array(
         'pluginPaths' =>
             array('Glitch_Application_Resource' => 'Glitch/Application/Resource'),
-    	'resources' => array('router' => array(
+        'resources' => array('router' => array(
             'routes' => array('decisionRest' =>
                 array('route' => 'decision/',
                       'type' => 'Glitch_Controller_Router_Route_Rest',
@@ -29,7 +29,7 @@ class Glitch_Controller_Router_CliTest
     {
         if(ini_get('register_argc_argv') == false) {
             $this->markTestSkipped(
-            		'Cannot Test Zend_Console_Getopt without '
+                    'Cannot Test Zend_Console_Getopt without '
                   . '\'register_argc_argv\' ini option true.'
             );
         }
@@ -46,7 +46,7 @@ class Glitch_Controller_Router_CliTest
         $bootstrap->bootstrap();
 
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap);
 
         $router = new Glitch_Controller_Router_Cli();
@@ -67,7 +67,7 @@ class Glitch_Controller_Router_CliTest
         $bootstrap->bootstrap();
 
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap);
 
         $console = new Glitch_Console_Getopt(
@@ -100,7 +100,7 @@ class Glitch_Controller_Router_CliTest
         $bootstrap->bootstrap();
 
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap);
         $router = new Glitch_Controller_Router_Cli();
 
@@ -142,7 +142,7 @@ class Glitch_Controller_Router_CliTest
         $bootstrap->bootstrap();
 
         $request = new Glitch_Controller_Request_RestMock(
-       	 			'http://example.net/decision/location/5/defects',
+                        'http://example.net/decision/location/5/defects',
                     $bootstrap);
 
         $usecases = array(array('reqstring' => array('--request=module.controller.action'),
@@ -151,7 +151,7 @@ class Glitch_Controller_Router_CliTest
                                 'action' => 'action',
                                 'params' => array()),
                           array('reqstring' => array('--request=www.enrise.com',
-                          							 '--params=euro=€'),
+                                                       '--params=euro=€'),
                                 'module' => 'www',
                                 'controller' => 'enrise',
                                 'action' => 'com',

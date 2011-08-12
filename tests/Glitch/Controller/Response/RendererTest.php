@@ -8,7 +8,7 @@ class Glitch_Controller_Response_RendererTest
     {
         $file = 'Glitch/Controller/Response/Renderer/Xml.php';
         $vars = array('foobar' => array('foo' => true, 'bar' => false,
-        								'baz' => null, 'john' => 'doe'));
+                                        'baz' => null, 'john' => 'doe'));
         $response = new Glitch_Controller_Response_Rest();
         $xml = $this->renderFile($file, array('data' => $vars), $response);
         $this->assertEquals($this->_expectedXml, $xml);
@@ -18,12 +18,12 @@ class Glitch_Controller_Response_RendererTest
     {
         $file = 'Glitch/Controller/Response/Renderer/Json.php';
         $vars = array('foobar' => array('foo' => true, 'bar' => false,
-        								'baz' => null, 'john' => 'doe'));
+                                        'baz' => null, 'john' => 'doe'));
         $response = new Glitch_Controller_Response_Rest();
         $json = $this->renderFile($file, array('data' => $vars), $response);
 
         $this->assertEquals(
-        	'{"foobar":{"foo":true,"bar":false,"baz":null,"john":"doe"}}',
+            '{"foobar":{"foo":true,"bar":false,"baz":null,"john":"doe"}}',
             $json
         );
     }
@@ -32,7 +32,7 @@ class Glitch_Controller_Response_RendererTest
     {
         $file = 'Glitch/Controller/Response/Renderer/Html.php';
         $vars = array('foobar' => array('foo' => true, 'bar' => false,
-        								'baz' => null, 'john' => 'doe'));
+                                        'baz' => null, 'john' => 'doe'));
         $response = new Glitch_Controller_Response_Rest();
         $html = $this->renderFile($file, array('data' => $vars), $response);
 
