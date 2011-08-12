@@ -1,0 +1,16 @@
+Index: Zend/Controller/Action/Helper/AjaxContext.php
+===================================================================
+--- Zend/Controller/Action/Helper/AjaxContext.php	(revision 24130)
++++ Zend/Controller/Action/Helper/AjaxContext.php	(working copy)
+@@ -68,7 +68,10 @@
+     {
+         $this->_currentContext = null;
+ 
+-        if (!$this->getRequest()->isXmlHttpRequest()) {
++        $request = $this->getRequest();
++        if (!method_exists($request, 'isXmlHttpRequest') ||
++            !$this->getRequest()->isXmlHttpRequest())
++        {
+             return;
+         }
+
