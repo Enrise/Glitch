@@ -81,16 +81,20 @@ class Glitch_Controller_Action_RestTest
 
         $exceptions = array(array('msg' => 'Requested resource could not be found',
                                   'code' => 404,
-                                  'method' => 'notFoundException'),
+                                  'method' => 'notFoundException',
+                                  'class' => 'Glitch_Controller_Action_ExceptionMessage'),
                             array('msg' => 'Incorrect format specified',
                                   'code' => 406,
-                                  'method' => 'notAcceptedException'),
+                                  'method' => 'notAcceptedException',
+                                  'class' => 'Glitch_Controller_Action_ExceptionMessage'),
                             array('msg' => 'Incorrect format specified',
                                   'method' => 'incorrectFormatException',
-                                  'code' => 501),
+                                  'code' => 501,
+                                  'class' => 'Glitch_Controller_Action_ExceptionMessage'),
                             array('msg' => 'Bad request',
                                   'method' => 'badRequestException',
-                                  'code' => 400));
+                                  'code' => 400,
+                                  'class' => 'Glitch_Controller_Action_ExceptionMessage'));
 
         $methods = array('Put', 'Post', 'Get', 'Delete', 'Options', 'foobar');
         foreach(array('resource', 'collection') as $type) {
@@ -98,7 +102,8 @@ class Glitch_Controller_Action_RestTest
                 $methodName = $type . $method . 'Action';
                 $exceptions[] = array('code' => 501,
                 					'msg' => 'Requested action '. $methodName .' not implemented',
-                                    'method' => $methodName);
+                                    'method' => $methodName,
+                                    'class' => 'Glitch_Exception_Message');
             }
         }
 
@@ -106,9 +111,10 @@ class Glitch_Controller_Action_RestTest
             try {
                 $controller->{$exception['method']}();
                 $this->fail('Exception expected');
-            } catch(Glitch_Exception_Message $e) {
+            } catch(Glitch_Exception_MessageInterface $e) {
                 $this->assertEquals($exception['msg'], $e->getMessage());
                 $this->assertEquals($exception['code'], $e->getCode());
+                $this->assertEquals($exception['class'], get_class($e));
             }
         }
     }
