@@ -2,8 +2,8 @@ Welcome to the Glitch Library !
 
 RELEASE INFORMATION
 ---------------
-Glitch Library3.0-dev Release.
-Released on <Month> <Day>, <Year>.
+Glitch Library3.0.0 Release.
+Released on August 18, 2011.
 
 SYSTEM REQUIREMENTS
 -------------------
@@ -14,7 +14,7 @@ INSTALLATION
 ------------
 
 Please see the demo project and its instructions in the Demo directory.
-Also, please check out our documentation at <URL>
+Also, please check out our documentation at http://developer.enrise.com/Glitch
 
 LICENSE
 -------
