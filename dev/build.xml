@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id$  -->
+<project name="Glitch" basedir="." default="build">
+    <property name="builddir" value="${ws}/build" />
+    <property name="bindir" value="/usr/bin" />
+
+        <!-- Default fileset -->
+        <fileset dir="${ws}" id="project.fileset.default">
+                <exclude name="**/library/Zend/**" />
+                <include name="**/library/Glitch/*.php" />
+        </fileset>
+
+    <target name="clean">
+        <echo msg="Clean..." />
+        <delete dir="${builddir}" />
+    </target>
+
+    <target name="prepare">
+        <echo msg="Prepare..." />
+        <mkdir dir="${builddir}" />
+        <mkdir dir="${builddir}/logs" />
+        <mkdir dir="${builddir}/logs/coverage" />
+        <mkdir dir="${builddir}/docs" />
+        <mkdir dir="${builddir}/docs/phpdoc" />
+        <mkdir dir="${builddir}/docs/coverage" />
+        <mkdir dir="${builddir}/pdepend" />
+    </target>
+
+    <target name="build" depends="clean, prepare, phpmd, phpcs, phpcpd, phpunit, pdepend">
+        <echo msg="Building..." />
+    </target>
+
+    <!-- PHP API Documentation -->
+    <target name="phpdoc">
+        <echo msg="PHP Documentor..." />
+        <phpdoc title="API Documentation"
+                destdir="${builddir}/docs/phpdoc"
+                sourcecode="yes"
+                defaultpackagename="Glitch"
+                output="HTML:Smarty:PHP">
+                <fileset refid="project.fileset.default" />
+        </phpdoc>
+    </target>
+
+    <!-- PHP copy/paste analysis -->
+    <target name="phpcpd">
+        <echo msg="PHP Copy/Paste..." />
+        <phpcpd>
+                <formatter type="pmd" outfile="${builddir}/logs/phpcpd.xml" />
+                <fileset refid="project.fileset.default" />
+        </phpcpd>
+    </target>
+
+    <!-- PHP dependency checker -->
+    <target name="pdepend">
+        <echo msg="PHP Depend..." />
+        <phpdepend>
+                <fileset refid="project.fileset.default" />
+                <logger type="jdepend-xml" outfile="${builddir}/logs/jdepend.xml" />
+                <logger type="jdepend-chart" outfile="${builddir}/pdepend/dependencies.svg" />
+                <logger type="overview-pyramid" outfile="${builddir}/pdepend/overview-pyramid.svg" />
+                <analyzer type="coderank-mode" value="method" />
+        </phpdepend>
+    </target>
+
+    <!-- PHP CodeSniffer -->
+    <target name="phpcs">
+        <echo msg="PHP CodeSniffer..." />
+        <phpcodesniffer standard="Zend" showSniffs="true" ShowWarnings="True">
+                <fileset refid="project.fileset.default" />
+                <formatter type="checkstyle" outfile="${builddir}/logs/checkstyle.xml" />
+        </phpcodesniffer>
+    </target>
+
+    <!-- Unit Tests & coverage analysis -->
+    <target name="phpunit">
+        <echo msg="PHP Unit..." />
+        <exec command="${bindir}/phpunit --bootstrap ${ws}/tests/phpunit-boot.php --log-junit ${builddir}/logs/phpunit.xml --coverage-clover ${builddir}/docs/coverage/clover.xml --coverage-html ${builddir}/docs/coverage ${ws}/tests"/>
+    </target>
+
+    <!-- Mess detection checker -->
+    <target name="phpmd">
+        <echo msg="PHP Mess detection" />
+        <phpmd rulesets="codesize,unusedcode">
+                <fileset refid="project.fileset.default" />
+                <formatter type="xml" outfile="${builddir}/logs/phpmd.xml" />
+        </phpmd>
+    </target>
+
+</project>
