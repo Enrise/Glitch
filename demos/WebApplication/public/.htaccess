@@ -1,0 +1,43 @@
+# Main htaccess file - BE CAREFUL!
+#
+# This source file is proprietary and protected by international
+# copyright and trade secret laws. No part of this source file may
+# be reproduced, copied, adapted, modified, distributed, transferred,
+# translated, disclosed, displayed or otherwise used by anyone in any
+# form or by any means without the express written authorization of
+# 4worx software innovators BV (www.4worx.com)
+#
+# @category    Idm
+# @package     Idm
+# @author      4worx <info@4worx.com>
+# @copyright   2010, 4worx
+# @version     $Id$
+
+DirectoryIndex index.php
+Options -Indexes +FollowSymLinks
+php_flag short_open_tag off
+
+# Prevent character encoding issues from server overrides
+AddDefaultCharset Off
+
+# If you still have problems, use this line instead
+# AddDefaultCharset UTF-8
+
+# Used by Zend Framework: development, testing, qa, acceptance or production
+SetEnv GLITCH_APP_ENV development
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Always send a 404 if these files are missing
+    RewriteRule ^(favicon.ico|robots.txt)$ - [L]
+
+    # Basic Zend Framework settings
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d 
+    RewriteRule ^.*$ - [NC,L]
+    RewriteRule ^.*$ index.php [NC,L]
+
+</IfModule>
