@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit stopOnFailure="false" bootstrap="phpunit-boot.php">
+	<logging>
+		<log type="coverage-html" target="../public/coverage" charset="UTF-8" yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+		<log type="testdox-html" target="../public/coverage/testdox.html" />
+	</logging>
+
+	<colors>true</colors>
+	<verbose>true</verbose>
+
+	<filter>
+		<whitelist>
+			<directory suffix=".php">../application</directory>
+			<directory suffix=".php">../library/Mainflow</directory>
+		</whitelist>
+		<blacklist>
+			<directory suffix=".php">../tests</directory>
+			<directory suffix=".php">../library/Glitch</directory>
+			<directory suffix=".php">../library/Zend</directory>
+		</blacklist>
+	</filter>
+</phpunit>
