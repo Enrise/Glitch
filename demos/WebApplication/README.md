@@ -1,7 +1,27 @@
-Before using this demo application please make sure you've..
-* Changed the APP_NAME constant in public/index.php into something you like
-* Add the Zend and Glitch library in the library folder
+### Glitch Demo Web Application (release 3.0)
 
-After that you can test if everything work by calling:
-* http://<yourhost>/example/example - Should give a HTML response
-* php index.php -r scripts.util.example -e development - Should give a 'It works!' response
+**Before using:**
+
+1.   Go to public/index.php and change ``APP_NAME`` constant into something you like
+2.   switch to the correct branch (release 3.0)
+3.   Copy or symlink the Zend and Glitch library to ./library
+
+**Installation summary - Linux Unix**
+
+this installs the demo next to Glitch with all libraries symlinked to Glitch.
+
+
+```
+git clone https://github.com/Enrise/Glitch.git
+cd Glitch/
+git checkout release-3.0
+cp demo/WebApplication ../WebApplication && cd ../WebApplication/library/
+ln -s ../../Glitch/library/Glitch Glitch
+ln -s ../../Glitch/library/Zend Zend
+```
+
+
+*Glitch is brought to you by*
+
+![Enrise Create Web Technology ](http://www.enrise.com/enrise-creative-web-technology.gif)
+
