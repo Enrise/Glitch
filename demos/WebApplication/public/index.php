@@ -16,7 +16,7 @@
  * @version     $Id: index.php 7102 2010-09-25 14:00:10Z sdvalk $
  */
 
-define('APP_NAME', 'glitch3_web_application');
+define('APP_NAME', 'glitch3_web_application'); //please don't use spaces
 
 require_once '../application/Init.php';
 
@@ -29,7 +29,6 @@ new Glitch_Loader_Autoloader();
 
 // Note: This must be called PRIOR to any calls to Zend_Controller_Front!
 Glitch_Controller_Front::getInstance();
-Glitch_Controller_Front::getInstance()->setParam('useDefaultControllerAlways', true);
 
 // Initialize the application
 $application = new Zend_Application(GLITCH_APP_ENV, Glitch_Config_Ini::getConfig());
