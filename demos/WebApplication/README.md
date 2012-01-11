@@ -15,6 +15,8 @@ this installs the demo next to Glitch with all libraries symlinked to Glitch.
 git clone https://github.com/Enrise/Glitch.git
 cd Glitch/
 git checkout release-3.0
+git submodule init
+git submodule update
 cp -a demos/WebApplication ../WebApplication && cd ../WebApplication/library/
 ln -s ../../Glitch/library/Glitch Glitch
 ln -s ../../Glitch/library/Zend Zend
