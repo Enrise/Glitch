@@ -11,7 +11,6 @@
 	<filter>
 		<whitelist>
 			<directory suffix=".php">../application</directory>
-			<directory suffix=".php">../library/Mainflow</directory>
 		</whitelist>
 		<blacklist>
 			<directory suffix=".php">../tests</directory>
