@@ -2,7 +2,7 @@
 
 **Before using:**
 
-1.   Go to public/index.php and change ``APP_NAME`` constant into something you like
+1.   Go to application/Init.php and change ``APP_NAME`` constant into something you like
 2.   switch to the correct branch (release 3.0)
 3.   Copy or symlink the Zend and Glitch library to ./library
 
