@@ -1,0 +1,12 @@
+; This file has to be renamed to user.ini. It contains all configuration files that
+; must be overridden by your settings. For instance your database credentials etc.
+
+[production]
+
+[acceptance: production]
+
+[qa : acceptance]
+
+[testing : qa]
+
+[development : qa]
