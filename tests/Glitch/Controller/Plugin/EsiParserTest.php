@@ -19,6 +19,7 @@ class Glitch_Controller_Plugin_EsiParserTest extends PHPUnit_Framework_TestCase
         );
         $cache = Zend_Cache::factory('Core', new Zend_Cache_Backend_BlackHole, $front, $back);
         $_SERVER['HTTP_HOST'] = 'test.dev';
+        Glitch_Controller_Plugin_TestEsiParser::setCache($cache);
         $this->_parser = new Glitch_Controller_Plugin_TestEsiParser();
         $this->_testEsi = '<esi:include src="/snippets/test" />';
     }
