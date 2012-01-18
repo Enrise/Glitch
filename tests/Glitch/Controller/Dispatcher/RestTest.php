@@ -105,6 +105,72 @@ class Glitch_Controller_Dispatcher_RestTest
             throw $e;
         }
     }
+    
+    public function testPreDispatch()
+    {
+        $includePath = get_include_path();
+        set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . '/_data/');
+
+        $app = new Zend_Application('testing', $this->_appConfig);
+        $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
+        $bootstrap->bootstrap();
+
+        $response = new Glitch_Controller_Response_Rest();
+        $request = new Glitch_Controller_Request_RestMock(
+                    'http://example.net/decision/locations',
+                    $bootstrap,
+                    array('REQUEST_METHOD' => 'DELETE'));
+
+        $router = $bootstrap->getResource('router');
+        $router->route($request);
+
+        $dispatcher = new Glitch_Controller_Dispatcher_Rest();
+        $response->renderbody(false);
+        $dispatcher->dispatch($request, $response);
+        $response->renderBody(true);
+
+        ob_start();
+        $response->outputBody();
+        $this->assertEmpty(ob_get_clean());
+
+        $this->assertEquals($dispatcher->getResponse(), $response);
+        $this->assertInstanceOf('Decisionmodule_Controller_Location', $dispatcher->getLastController());
+        $this->assertClassHasAttribute('preDispatch', 'Decisionmodule_Controller_Location');
+        $this->assertTrue($dispatcher->getLastController()->preDispatch);
+    }
+
+    public function testPostDispatch()
+    {
+        $includePath = get_include_path();
+        set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . '/_data/');
+
+        $app = new Zend_Application('testing', $this->_appConfig);
+        $bootstrap = new Glitch_Application_Bootstrap_Bootstrap($app);
+        $bootstrap->bootstrap();
+
+        $response = new Glitch_Controller_Response_Rest();
+        $request = new Glitch_Controller_Request_RestMock(
+                    'http://example.net/decision/locations',
+                    $bootstrap,
+                    array('REQUEST_METHOD' => 'DELETE'));
+
+        $router = $bootstrap->getResource('router');
+        $router->route($request);
+
+        $dispatcher = new Glitch_Controller_Dispatcher_Rest();
+        $response->renderbody(false);
+        $dispatcher->dispatch($request, $response);
+        $response->renderBody(true);
+
+        ob_start();
+        $response->outputBody();
+        $this->assertEmpty(ob_get_clean());
+
+        $this->assertEquals($dispatcher->getResponse(), $response);
+        $this->assertInstanceOf('Decisionmodule_Controller_Location', $dispatcher->getLastController());
+        $this->assertClassHasAttribute('postDispatch', 'Decisionmodule_Controller_Location');
+        $this->assertTrue($dispatcher->getLastController()->postDispatch);
+    }
 
     public function testExceptionIsThrownOnFailingPassthrough()
     {
