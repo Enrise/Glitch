@@ -1,6 +1,12 @@
 <?php
 // Define Name of the application if not already done so.
 if (! defined('APP_NAME')) {
+    $appName = getenv('GLITCH_APP_NAME');
+    if (null != $appName)
+    {
+        define('APP_NAME', $appName);
+    }
+
     define('APP_NAME', 'DefaultApplication');
 }
 

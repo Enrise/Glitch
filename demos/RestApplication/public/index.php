@@ -16,6 +16,7 @@
  * @version     $Id: index.php 7102 2010-09-25 14:00:10Z sdvalk $
  */
 
+// Used for log and cache. Remove if you want to use env. vars.
 define('APP_NAME', 'RestApplication');
 
 require_once '../application/Init.php';
