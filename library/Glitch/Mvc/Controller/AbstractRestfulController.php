@@ -62,7 +62,7 @@ abstract class AbstractRestfulController extends AbstractActionController
         $value = $parts->shift();
         $this->getRequest()->setMetadata($key, $value);
 
-        return array('key' => $key, 'value' => $value);
+        return array($key, $value);
     }
 
     /**
@@ -73,7 +73,7 @@ abstract class AbstractRestfulController extends AbstractActionController
     public static function isUrlPartMatch($part) {
 
         return in_array($part, (array) static::$collectionId) ||
-        in_array($part, (array) static::$resourceId);
+               in_array($part, (array) static::$resourceId);
     }
 
 
@@ -104,6 +104,7 @@ abstract class AbstractRestfulController extends AbstractActionController
 
         $urlParts = $routeMatch->getUrlParts();
         $urlParts->rewind();
+
 
         if (in_array($urlParts->current(), (array) static::$resourceId)) {
             $type = self::TYPE_RESOURCE;
@@ -172,7 +173,13 @@ abstract class AbstractRestfulController extends AbstractActionController
         $controllerLoader = $this->getServiceLocator()->get('ControllerLoader');
         $controllerLoader->injectControllerDependencies($controller, $this->getServiceLocator());
 
+        $controller->setRequest($this->getRequest());
         $controller->onDispatch($e);
+    }
+
+    public function setRequest($request)
+    {
+        $this->request = $request;
     }
 
     /**
