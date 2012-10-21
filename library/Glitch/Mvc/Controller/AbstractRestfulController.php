@@ -86,7 +86,12 @@ abstract class AbstractRestfulController extends AbstractActionController
      */
     public function onDispatch(MvcEvent $e)
     {
-        $this->doDispatch($e);
+        if (!$this->shouldPassThrough($e, 0)) {
+            return parent::onDispatch($e);
+        }
+
+        $nextPart = $e->getRouteMatch()->getUrlParts()->current();
+        return $this->dispatchSubController($e, $nextPart);
     }
 
     /**
@@ -105,7 +110,6 @@ abstract class AbstractRestfulController extends AbstractActionController
         $urlParts = $routeMatch->getUrlParts();
         $urlParts->rewind();
 
-
         if (in_array($urlParts->current(), (array) static::$resourceId)) {
             $type = self::TYPE_RESOURCE;
         } elseif (in_array($urlParts->current(), (array) static::$collectionId)) {
@@ -114,17 +118,22 @@ abstract class AbstractRestfulController extends AbstractActionController
             return $this->dispatchMethod($e, 'notFoundAction');
         }
 
-        if ($urlParts->count() > ($type == self::TYPE_COLLECTION ? 1 : 2)) {
+        if ($this->shouldPassThrough($e, $type == self::TYPE_COLLECTION ? 1 : 2)) {
             return $this->passThrough($e, $type);
         }
 
-        $this->dispatchMethod($e, $this->getRestMethod($type));
+        return $this->dispatchMethod($e, $this->getRestMethod($type));
+    }
+
+    protected function shouldPassThrough(MvcEvent $e, $countCurController)
+    {
+        return $e->getRouteMatch()->getUrlParts()->count() > $countCurController;
     }
 
     protected function getRestMethod($type)
     {
         return $this->getMethodFromAction(
-                $type . '.' . strtolower($this->getRequest()->getMethod())
+                    $type . '.' . strtolower($this->getRequest()->getMethod())
             );
     }
 
@@ -162,6 +171,15 @@ abstract class AbstractRestfulController extends AbstractActionController
             $this->passThroughResource($e);
         }
 
+        $this->dispatchSubController($e, $nextUrlPart);
+    }
+
+
+    /**
+     *
+     */
+    protected function dispatchSubController (MvcEvent $e, $nextUrlPart)
+    {
         $className = $this->getSubClass($nextUrlPart);
         if (!$className) {
             // handle error
@@ -174,8 +192,9 @@ abstract class AbstractRestfulController extends AbstractActionController
         $controllerLoader->injectControllerDependencies($controller, $this->getServiceLocator());
 
         $controller->setRequest($this->getRequest());
-        $controller->onDispatch($e);
+        return $controller->doDispatch($e);
     }
+
 
     public function setRequest($request)
     {
@@ -209,15 +228,43 @@ abstract class AbstractRestfulController extends AbstractActionController
 
 
     /**
-     * What does this return?
+     * Dispatch the given action method
+     *
      * @param string $method
-     * @return unknown
+     * @return mixed But usally a ViewModel
      */
     protected function dispatchMethod(MvcEvent $e, $method)
     {
         $actionResponse = $this->$method();
-        $e->setResult($actionResponse);
+        $this->prepForTemplateListener($e, $method);
+
         return $actionResponse;
+    }
+
+    /**
+     * We need to do a little hacking here, because
+     * InjectTemplateListener::deriveControllerClass() assumes a flat structure
+     *
+     * @param MvcEvent $e
+     * @param unknown_type $method
+     */
+    protected function prepForTemplateListener(MvcEvent $e, $method)
+    {
+        $e->setResult($actionResponse);
+
+        $rootController = get_class($e->getTarget());
+        $ns = substr($rootController, 0, strrpos($rootController, '\\') + 1);
+
+        $controller = get_called_class();
+        $fakeTarget = substr($controller, 0, strpos($controller, '\\'))
+                    . '\\' . str_replace('\\', '/', substr($controller, strlen($ns)));
+        $e->setTarget($fakeTarget);
+
+        if (substr($method, -6) == 'Action') {
+            $method = substr($method, 0, -6);
+        }
+
+        $e->getRouteMatch()->setParam('action', $method);
     }
 
 }

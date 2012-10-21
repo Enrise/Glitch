@@ -37,21 +37,26 @@ class Rest extends Part
      * @var array
      */
     private static $defaultRoutes = array(
-             'route' => array('type' => 'Literal'),
-                 'may_terminate' => true,
-                 'child_routes' => array(
-                         array(
-                                 'type'    => 'wildcard',
-                                 'options' => array(
-                                         'route'    => '*',
-                                 ),
-                         ),
-                         array(
-                                 'type'    => 'Literal',
-                                 'options' => array(
-                                         'route'    => '/',
-                                 ),
-                         ),
+             'route' => array(
+                 'type' => 'Literal',
+                 'options' => array(
+                     'defaults' => array('action' => 'index')
+                 )
+             ),
+             'may_terminate' => true,
+             'child_routes' => array(
+                     array(
+                             'type'    => 'wildcard',
+                             'options' => array(
+                                     'route'    => '*',
+                             ),
+                     ),
+/*                      array(
+                             'type'    => 'Literal',
+                             'options' => array(
+                                     'route'    => '/',
+                             ),
+                     ), */
                  ),
             );
 

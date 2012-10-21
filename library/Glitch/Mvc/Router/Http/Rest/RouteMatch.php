@@ -37,15 +37,18 @@ class RouteMatch extends HttpRouteMatch
      * @param  Request $request
      * @param  array   $params
      * @param  integer $length
+     *
+     * @todo evaluate if we should do something with $match->getLength()
      */
     public function __construct(Request $request, HttpRoute $route, HttpRouteMatch $match)
     {
-        parent::__construct(array('controller' => $match->getParam('controller')));
+        parent::__construct(array('controller' => $match->getParam('controller'),
+                                  'action'     => $match->getParam('action')));
 
         $this->length = $match->getLength();
         $path = substr(
                     $request->getUri()->getPath(),
-                    - ($match->getLength() - strlen($route->getRoutePath()))
+                    strlen($route->getRoutePath())
         );
 
         $parts = explode(self::PATH_SEPARATOR, $path);
