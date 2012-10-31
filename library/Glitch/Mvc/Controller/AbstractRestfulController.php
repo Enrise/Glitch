@@ -21,22 +21,32 @@ abstract class AbstractRestfulController extends AbstractActionController
     const TYPE_COLLECTION = 'collection';
 
     /**
+     * This string|array is used to determine if the next part of the string
+     * matches this class and if it denotes a resource.
+     *
      * @var string|array
      */
     protected static $resourceId;
 
     /**
+     * This string|array is used to determine if the next part of the string
+     * matches this class and if it denotes a collection.
      * @var string|array
      */
     protected static $collectionId;
 
     /**
-     * Should be abstract
+     * Used to glob the controller directory structure.
+     *
+     * Unfortunately the Service Locator does not have a wildcard search. Yet.
      */
     abstract protected function getDir();
 
     /**
-     * You will want to override this. Usually calling the parent might come in handy.
+     * When a subclass its target is called upon this method is called.
+     * Usually it is used to fill the request object with objects based on the url parameters.
+     *
+     * You will want to override this. Usually, calling the parent might come in handy.
      *
      * @param MvcEvent $e
      * @return multitype:unknown
@@ -50,6 +60,9 @@ abstract class AbstractRestfulController extends AbstractActionController
     }
 
     /**
+     * When a subclass is called upon this method is calle if a resource was given.
+     * Usually it is used to fill the request object with objects based on the url parameters.
+     *
      * You will want to override this. Usually calling the parent might come in handy.
      *
      * @param MvcEvent $e
@@ -66,8 +79,9 @@ abstract class AbstractRestfulController extends AbstractActionController
     }
 
     /**
+     * Return true if a keyword (from the url) applies to this class.
      *
-     * @param unknown_type $part
+     * @param string $part
      * @return boolean
      */
     public static function isUrlPartMatch($part) {
@@ -78,7 +92,7 @@ abstract class AbstractRestfulController extends AbstractActionController
 
 
     /**
-     * Execute the request
+     * Execute the request. Triggered by the Event Manager.
      *
      * @param  MvcEvent $e
      * @return mixed
@@ -96,9 +110,12 @@ abstract class AbstractRestfulController extends AbstractActionController
 
     /**
      *
+     * Called by a parent class to descend through the controller classes.
+     * Either descends further, or dispatches a method of its own.
+     *
      * @param MvcEvent $e
-     * @throws Exception\DomainException
-     * @return \Pacman\Mvc\Controller\unknown
+     * @throws Exception\DomainException @TODO
+     * @return \Pacman\Mvc\Controller\unknown @TODO
      */
     public function doDispatch(MvcEvent $e)
     {
@@ -125,11 +142,28 @@ abstract class AbstractRestfulController extends AbstractActionController
         return $this->dispatchMethod($e, $this->getRestMethod($type));
     }
 
+
+    /**
+     * Determine if the remaining part of the url contains enough elements
+     * to further descend through the tree of controller classes.
+     *
+     * @param MvcEvent $e
+     * @param Integer $countCurController Minimum number of elements required
+     * @return boolean
+     */
     protected function shouldPassThrough(MvcEvent $e, $countCurController)
     {
         return $e->getRouteMatch()->getUrlParts()->count() > $countCurController;
     }
 
+
+    /**
+     * Determine the name of the method to call based on the HTTP Request Method used,
+     * and if a collection or resource was requested.
+     *
+     * @param string $type Either TYPE_COLLECTION or TYPE_RESOURCE
+     * @return string The name of the method.
+     */
     protected function getRestMethod($type)
     {
         return $this->getMethodFromAction(
@@ -156,9 +190,10 @@ abstract class AbstractRestfulController extends AbstractActionController
 
 
     /**
+     * When a subcontroller is to be called, call one of the passthrough methods first.
      *
      * @param MvcEvent $e
-     * @param unknown_type $type
+     * @param string $type either self::TYPE_COLLECTION or self::TYPE_RESOURCE
      * @throws \exception
      */
     protected function passThrough(MvcEvent $e, $type)
@@ -175,8 +210,14 @@ abstract class AbstractRestfulController extends AbstractActionController
     }
 
 
+
     /**
+     * Dispatch a child controller.
      *
+     * @param MvcEvent $e
+     * @param string $nextUrlPart The name of the next url part.
+     * @return mixed Usually a ViewModel
+     * @throws \exception
      */
     protected function dispatchSubController (MvcEvent $e, $nextUrlPart)
     {
@@ -196,15 +237,20 @@ abstract class AbstractRestfulController extends AbstractActionController
     }
 
 
+    /**
+     * Set the request object.
+     * @param  $request @TODO
+     */
     public function setRequest($request)
     {
         $this->request = $request;
     }
 
     /**
+     * Glob through the controller directory to find any potential children.
      *
      * @param string $nextUrlPart
-     * @return string
+     * @return string|null Full name of the controller found.
      */
     protected function getSubClass($nextUrlPart)
     {
@@ -242,16 +288,31 @@ abstract class AbstractRestfulController extends AbstractActionController
     }
 
     /**
+     * Return the id of a resource (from the url)
+     * @return NULL|string
+     */
+    protected function getResourceId()
+    {
+        $e = $this->getEvent();
+        if (!$e->getRouteMatch()->getUrlParts()->offsetExists(1)) {
+            return null;
+        }
+
+        return $e->getRouteMatch()->getUrlParts()->offsetGet(1);
+    }
+
+    /**
      * We need to do a little hacking here, because
      * InjectTemplateListener::deriveControllerClass() assumes a flat structure
      *
      * @param MvcEvent $e
      * @param unknown_type $method
+     * @return null
+     *
+     * @see https://twitter.com/Freeaqingme/status/263779825469239297
      */
     protected function prepForTemplateListener(MvcEvent $e, $method)
     {
-        $e->setResult($actionResponse);
-
         $rootController = get_class($e->getTarget());
         $ns = substr($rootController, 0, strrpos($rootController, '\\') + 1);
 
