@@ -7,11 +7,14 @@ use Zend\Mvc\Router\Http\Part;
 use Glitch\Mvc\Router\Http\Rest\RouteMatch as RestRouteMatch;
 use Zend\Mvc\Router\Http\RouteMatch as HttpRouteMatch;
 use Zend\Mvc\Router\RoutePluginManager;
+use \Zend\ServiceManager\ServiceManager;
 use Traversable;
 use Zend\Mvc\Router;
 use Zend\Mvc\Router\Exception;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\RequestInterface as Request;
+use Zend\ServiceManager\InitializerInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 
 use Zend\Debug\Debug;
@@ -31,6 +34,8 @@ class Rest extends Part
      * @var string
      */
     protected $routePath;
+
+    protected $sm;
 
     /**
      * Private on purpose. API should not be considered stable yet
@@ -71,11 +76,15 @@ class Rest extends Part
      * @throws Exception\InvalidArgumentException
      * @return Part
      */
-    public static function factory($customOptions = array())
+    public static function factory($customOptions = array(), ServiceManager $sm = null)
     {
+        if (!$sm) {
+            throw new \Exception('An instance of the service manager is required but none was supplied');
+        }
         $options = self::$defaultRoutes;
         $options['route']['options']['route'] = $customOptions['route'];
-        $options['route']['options']['defaults']['controller'] = $customOptions['defaults']['controller'];
+        $options['route']['options']['defaults']['controller'] =
+        $customOptions['defaults']['controller'];
 
         $plugins = array(
                 'Literal' => 'Zend\Mvc\Router\Http\Literal',
@@ -86,9 +95,22 @@ class Rest extends Part
             $options['route_plugins']->setInvokableClass($name, $class);
         }
 
-        return parent::factory($options);
+        $instance = parent::factory($options);
+        $instance->setServiceManager($sm);
+        return $instance;
     }
 
+    public function setServiceManager(ServiceManager $sm)
+    {
+        $this->sm = $sm;
+    }
+
+
+
+    public function initialize($instance, ServiceLocatorInterface $serviceLocator)
+    {
+        var_dump($instance === $this); exit;
+    }
     /**
      * Create a new part route.
      *
@@ -131,7 +153,35 @@ class Rest extends Part
                 $match
         );
 
+        $restRouteMatch->setMatchedRouteName(__CLASS__);
+        $controller = $this->passThrough($restRouteMatch->getParam('controller'), $restRouteMatch);
+
+        $restRouteMatch->setParam('controller', $controller);
+
+
         return $restRouteMatch;
+    }
+
+    protected function passThrough($controllerName, $routeMatch)
+    {
+        $routeMatch->getUrlParts()->rewind();
+        $controllerLoader = $this->sm->get('controllerloader');
+        $controller = $controllerLoader->get($controllerName);
+        if (!$controller->shouldPassThrough($routeMatch)) {
+            return $controllerName;
+        }
+
+        $controller->passThrough($routeMatch);
+
+        $nextUrlPart = $routeMatch->getUrlParts()->offsetGet(0);
+        $subControllers = $controllerLoader->getSubControllers($controllerName, true);
+        foreach($subControllers as $controller) {
+            if ($controller::isUrlPartMatch($nextUrlPart)) {
+                return $this->passThrough($controller, $routeMatch);
+            }
+        }
+
+        throw new \Exception('No match was found for this url? This couldn\'t happen.');
     }
 
     /**
@@ -161,5 +211,6 @@ class Rest extends Part
     {
         throw new \exception('Not Implemented');
     }
+
 
 }
