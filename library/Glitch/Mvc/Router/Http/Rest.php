@@ -3,6 +3,7 @@
 // namespace Pacman\Mvc\Router\Http;
 namespace Glitch\Mvc\Router\Http;
 
+use Glitch\Stdlib\SubstringSearcher;
 use Zend\Mvc\Router\Http\Part;
 use Glitch\Mvc\Router\Http\Rest\RouteMatch as RestRouteMatch;
 use Zend\Mvc\Router\Http\RouteMatch as HttpRouteMatch;
@@ -174,7 +175,8 @@ class Rest extends Part
         $controller->passThrough($routeMatch);
 
         $nextUrlPart = $routeMatch->getUrlParts()->offsetGet(0);
-        $subControllers = $controllerLoader->getSubControllers($controllerName, true);
+        $controllers = $controllerLoader->getServiceLocator()->getCanonicalNames();
+        $subControllers = SubstringSearcher::searchArray($controllers, $controllerName);
         foreach($subControllers as $controller) {
             if ($controller::isUrlPartMatch($nextUrlPart)) {
                 return $this->passThrough($controller, $routeMatch);
