@@ -2,7 +2,12 @@
 
 define('GLITCH_APP_ENV', 'testing');
 
-set_include_path(realpath(dirname(__FILE__)) . '/../library' . PATH_SEPARATOR . get_include_path());
+$glitchPath = realpath(dirname(__FILE__)) . '/..';
+set_include_path(
+    $glitchPath . '/library' . PATH_SEPARATOR .
+        $glitchPath . '/dev/submodules/ZF2' . PATH_SEPARATOR .
+    get_include_path()
+);
 
 // PHPUnit dependencies
 require_once 'PHPUnit/Framework/IncompleteTestError.php';
