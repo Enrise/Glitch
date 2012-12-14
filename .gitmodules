@@ -7,3 +7,6 @@
 [submodule "dev/submodule/ZF2"]
 	path = dev/submodule/ZF2
 	url = git@github.com:zendframework/zf2.git
+[submodule "dev/submodule/Phpunit-3.6"]
+	path = dev/submodule/Phpunit-3.6
+	url = git@github.com:sebastianbergmann/phpunit.git
