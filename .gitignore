@@ -3,3 +3,4 @@ tests/coverage/
 .project
 .settings/
 tests/coverage
+.idea/
