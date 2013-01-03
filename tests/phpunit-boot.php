@@ -2,15 +2,13 @@
 
 define('GLITCH_APP_ENV', 'testing');
 
-set_include_path(realpath(dirname(__FILE__)) . '/../library' . PATH_SEPARATOR . get_include_path());
-
-// PHPUnit dependencies
-require_once 'PHPUnit/Framework/IncompleteTestError.php';
-require_once 'PHPUnit/Framework/TestCase.php';
-require_once 'PHPUnit/Framework/TestSuite.php';
-require_once 'PHPUnit/Runner/Version.php';
-require_once 'PHPUnit/TextUI/TestRunner.php';
-require_once 'PHPUnit/Util/Filter.php';
+$glitchPath = realpath(dirname(__FILE__)) . '/..';
+set_include_path(
+    $glitchPath . '/library' . PATH_SEPARATOR .
+    $glitchPath . '/dev/submodule/ZF2/library' . PATH_SEPARATOR .
+    $glitchPath . '/dev/submodule/Phpunit-3.6' . PATH_SEPARATOR .
+    get_include_path()
+);
 
 require_once 'Glitch/Loader/Autoloader.php';
 new Glitch_Loader_Autoloader();
