@@ -19,13 +19,19 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
      */
     protected $testClass;
 
+    /**
+     * Prepare all tests. load the TestClass, and init a new ActionInfoReader
+     */
     protected function setUp()
     {
         require_once __DIR__ . '/ActionInfoReaderTest/TestClass.php';
         $this->reader = new Glitch_Controller_Action_Rest_ActionInfoReader();
     }
 
-    public function testGetResourceInfo()
+    /**
+     * Tests the reader on a non-existing method.
+     */
+    public function testGetResourceInfoNonExistingMethod()
     {
         $this->assertNull($this->reader->getResourceInfo('nonExistentClass', 'action'));
         $this->assertNull(
@@ -34,7 +40,13 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
                 'NonExistingMethod'
             )
         );
+    }
 
+    /**
+     * Test the reader on a method with no filter specified
+     */
+    public function testGetResourceInfoNoFilterMethod()
+    {
         $this->assertInternalType(
             'array',
             $this->reader->getResourceInfo(
@@ -42,7 +54,13 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
                 'noFilter'
             )
         );
+    }
 
+    /**
+     * Test the reader on a method with filter specified, but constraint as NONE
+     */
+    public function testGetResourceInfoWithFilterNoConstraint()
+    {
         // Test filter with no constraint
         $testAnnotationsNoConstraint = $this->reader->getResourceInfo(
             'Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass',
@@ -61,7 +79,13 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
         );
         $this->assertEquals('bar', $filterNoConstraint->getName());
         $this->assertEquals('A bar parameter description', $filterNoConstraint->getDescription());
+    }
 
+    /**
+     * Test the reader on a method with filter specified, but constraint as VALUES
+     */
+    public function testGetResourceInfoWithFilterListConstraint()
+    {
         // Test filter with list constraint
         $testAnnotationsListConstraint = $this->reader->getResourceInfo(
             'Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass',
@@ -82,29 +106,14 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
 
         $this->assertEquals('foo', $filterListConstraint->getName());
         $this->assertEquals('Fixed parameter values', $filterListConstraint->getDescription());
+    }
 
-        // Test filter with range constraint
-        $testAnnotationsRangeConstraint = $this->reader->getResourceInfo(
-            'Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass',
-            'barRange'
-        );
-        $this->assertCount(1, $testAnnotationsRangeConstraint);
-        $this->assertInternalType(
-            'array',
-            $testAnnotationsRangeConstraint
-        );
-
-        $filterRangeConstraint = $testAnnotationsRangeConstraint[0];
-        $this->assertEquals(
-            Glitch_Controller_Action_Rest_Annotation_ResourceFilter::FILTER_CONSTRAINT_RANGE,
-            $filterRangeConstraint->getConstraint()
-        );
-        $this->assertEquals(1, $filterRangeConstraint->getRangeMinimum());
-        $this->assertEquals(45, $filterRangeConstraint->getRangeMaximum());
-
-        $this->assertEquals('foo', $filterRangeConstraint->getName());
-        $this->assertEquals('Fixed parameter values', $filterRangeConstraint->getDescription());
-
+    /**
+     * Test the reader on a method with filter specified, but constraint as VALUES
+     * And, can be an array of values
+     */
+    public function testGetResourceInfoWithFilterListConstraintAndIsArray()
+    {
         // Test filter with list constraint and multiple select
         $testAnnotationsListArrayConstraint = $this->reader->getResourceInfo(
             'Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass',
@@ -126,5 +135,33 @@ class Glitch_Controller_Action_Rest_ActionInfoReaderTest extends PHPUnit_Framewo
 
         $this->assertEquals('foo', $filterListArrayConstraint->getName());
         $this->assertEquals('Fixed parameter values', $filterListArrayConstraint->getDescription());
+    }
+
+    /**
+     * Test the reader on a method with filter specified, but constraint as RANGE
+     */
+    public function testGetResourceInfoWithFilterRangeConstraint()
+    {
+        // Test filter with range constraint
+        $testAnnotationsRangeConstraint = $this->reader->getResourceInfo(
+            'Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass',
+            'barRange'
+        );
+        $this->assertCount(1, $testAnnotationsRangeConstraint);
+        $this->assertInternalType(
+            'array',
+            $testAnnotationsRangeConstraint
+        );
+
+        $filterRangeConstraint = $testAnnotationsRangeConstraint[0];
+        $this->assertEquals(
+            Glitch_Controller_Action_Rest_Annotation_ResourceFilter::FILTER_CONSTRAINT_RANGE,
+            $filterRangeConstraint->getConstraint()
+        );
+        $this->assertEquals(1, $filterRangeConstraint->getRangeMinimum());
+        $this->assertEquals(45, $filterRangeConstraint->getRangeMaximum());
+
+        $this->assertEquals('foo', $filterRangeConstraint->getName());
+        $this->assertEquals('Fixed parameter values', $filterRangeConstraint->getDescription());
     }
 }

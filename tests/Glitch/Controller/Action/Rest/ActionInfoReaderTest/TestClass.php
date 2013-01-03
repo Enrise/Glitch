@@ -3,7 +3,7 @@
 class Glitch_Controller_Action_Rest_ActionInfoReaderTest_TestClass
 {
     /**
-     *
+     * This docblock is empty on purpose.
      */
     public function noFilter()
     {
