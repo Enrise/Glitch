@@ -7,7 +7,7 @@ else
 	dir=$1
 fi
 
-phpunit \
+./../dev/submodule/Phpunit-3.6/phpunit.php \
     --testdox-html ../tests/coverage/testdox.html \
     --coverage-html ../tests/coverage \
     --configuration phpunit-local.xml \
